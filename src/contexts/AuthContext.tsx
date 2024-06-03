@@ -34,7 +34,6 @@ export function AuthProvider({ children }: AuthProviderProps) {
       alert("Usuário autenticado com sucesso!");
       setIsLoading(false);
     } catch (error) {
-      console.log(error); // tirar depois
       alert("Falha na autenticação! Verifique as informações.");
       setIsLoading(false);
     }

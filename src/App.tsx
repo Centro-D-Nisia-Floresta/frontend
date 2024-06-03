@@ -8,6 +8,9 @@ import Login from "./pages/login/Login";
 import Navbar from "./components/navbar/navbar";
 import Footer from "./components/footer/footer";
 import Cadastro from "./pages/cadastro/Cadastro";
+import ListaCategoria from "./components/categorias/listaCategorias/ListaCategoria";
+import DeletarCategoria from "./components/categorias/deletarCategorias/DeletarCategoria";
+import FormCategoria from "./components/categorias/formcategorias/FormCategoria";
 
 function App() {
   return (
@@ -23,6 +26,10 @@ function App() {
               <Route path="/contato" element={<Contato />} />
               <Route path="/cadastro" element={<Cadastro />} />
               <Route path="/login" element={<Login />} />
+              <Route path="/categorias" element={<ListaCategoria />} />
+              <Route path="/cadastroCategoria" element={<FormCategoria />} />
+              <Route path="/editarCategoria/:id" element={<FormCategoria />} />
+              <Route path="/deletarCategoria/:id" element={<DeletarCategoria />} />
             </Routes>
           </div>
           <Footer />
