@@ -22,6 +22,7 @@ function Navbar() {
             <img src="" alt="LOGO DO PROJETO" />     {/* Colocar imagem do logo */}
           </Link>
 
+<<<<<<< HEAD
   
           <div className="flex gap-4 items-center text-xl">
 
@@ -29,12 +30,29 @@ function Navbar() {
 
               <Link to="/cadastroCategoria" className="hover:underline">
                 Categorias
+=======
+          <div className="flex gap-4">
+            <div className="hover:underline"></div>
+              <Link to="/servicos">Servicos </Link>
+
+              <Link to="/cadastroServico" className="hover:underline">
+                Cadastrar Serviço
+              </Link>
+      
+              <Link to="/cadastroCategoria" className="hover:underline">
+                Cadastrar Categoria
+              </Link>
+
+              <Link to="/sobre" className="hover:underline">
+                Sobre
+>>>>>>> 9248d8f8091bd3d18e1ff90f07044877545f6df2
               </Link>
 
               <Link to="/contato" className="hover:underline">
                 Contato
               </Link>
 
+<<<<<<< HEAD
               <Link to="/login" className="hover:underline">
                 Login
               </Link>
@@ -45,10 +63,18 @@ function Navbar() {
               <SignOut size={30} weight="bold"/>
               </ Link> 
 
+=======
+              <div className="hover:underline">Perfil</div>
+
+              <Link to="" onClick={logout} className="hover:underline">
+                Sair
+              </Link>
+            </div>
+>>>>>>> 9248d8f8091bd3d18e1ff90f07044877545f6df2
           </div>
-        </div>
-      </div>
+        </div>  
     </>
   );
 }
+      
 export default Navbar;
