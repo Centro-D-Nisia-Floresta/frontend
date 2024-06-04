@@ -21,28 +21,35 @@ function Navbar() {
           </Link>
 
           <div className="flex gap-4">
-            <div className="hover:underline">
-              <Link to="/servicos">Servicos </Link></div>
-            {/* <Link to="/cadastro" className="hover:underline">
-              Cadastrar Usuário
-            </Link> */}
-            <Link to="/cadastroCategoria" className="hover:underline">
-              Cadastrar Categoria
-            </Link>
-            <Link to="/sobre" className="hover:underline">
-              Sobre
-            </Link>
-            <Link to="/contato" className="hover:underline">
-              Contato
-            </Link>
-            <div className="hover:underline">Perfil</div>
-            <Link to="" onClick={logout} className="hover:underline">
-              Sair
-            </Link>
+            <div className="hover:underline"></div>
+              <Link to="/servicos">Servicos </Link>
+
+              <Link to="/cadastroServico" className="hover:underline">
+                Cadastrar Serviço
+              </Link>
+      
+              <Link to="/cadastroCategoria" className="hover:underline">
+                Cadastrar Categoria
+              </Link>
+
+              <Link to="/sobre" className="hover:underline">
+                Sobre
+              </Link>
+
+              <Link to="/contato" className="hover:underline">
+                Contato
+              </Link>
+
+              <div className="hover:underline">Perfil</div>
+
+              <Link to="" onClick={logout} className="hover:underline">
+                Sair
+              </Link>
+            </div>
           </div>
-        </div>
-      </div>
+        </div>  
     </>
   );
 }
+      
 export default Navbar;

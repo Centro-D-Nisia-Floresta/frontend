@@ -1,5 +1,4 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import "./App.css";
 import Home from "./pages/home/home";
 import Sobre from "./pages/sobre/sobre";
 import Contato from "./pages/contato/contato";
@@ -11,7 +10,9 @@ import Cadastro from "./pages/cadastro/Cadastro";
 import ListaCategoria from "./components/categorias/listaCategorias/ListaCategoria";
 import DeletarCategoria from "./components/categorias/deletarCategorias/DeletarCategoria";
 import FormCategoria from "./components/categorias/formcategorias/FormCategoria";
-
+import FormServicos from "./components/servicos/formServico/FormServicos";
+import ListaServicos from "./components/servicos/listarServico/ListaServicos";
+import DeletarServico from "./components/servicos/deletarServico/DeletarServico";
 
 function App() {
   return (
@@ -27,12 +28,16 @@ function App() {
               <Route path="/contato" element={<Contato />} />
               <Route path="/cadastro" element={<Cadastro />} />
               <Route path="/login" element={<Login />} />
+
               <Route path="/categorias" element={<ListaCategoria />} />
               <Route path="/cadastroCategoria" element={<FormCategoria />} />
               <Route path="/editarCategoria/:id" element={<FormCategoria />} />
               <Route path="/deletarCategoria/:id" element={<DeletarCategoria />} />
-              <Route path="/deletarservicos/:id" element={<DeletarServico />} />
-              <Route path="/listarservicos/:id" element={<ListaServicos />} />
+
+              <Route path="/servicos" element={<ListaServicos />} />
+              <Route path="/cadastroServico" element={<FormServicos />} />
+              <Route path="/deletarServico/:id" element={<DeletarServico />} />
+              <Route path="/editarServico/:id" element={<FormServicos />} />
             </Routes>
           </div>
           <Footer />

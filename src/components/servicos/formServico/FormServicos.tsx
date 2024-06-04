@@ -1,20 +1,37 @@
-
+import { ChangeEvent, useContext, useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import Categoria from "../../../models/Categoria";
+import { RotatingLines } from "react-loader-spinner";
+import { AuthContext } from "../../../contexts/AuthContext";
+import Servico from "../../../models/Servico";
+import { buscar, atualizar, cadastrar } from "../../../services/Service";
+import { ToastAlerta } from "../../../utils/ToastAlerta";
 
 function FormServicos() {
   const navigate = useNavigate();
 
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [categorias, setCategorias] = useState<Tema[]>([]);
+  const [categorias, setCategorias] = useState<Categoria[]>([]);
 
-  const [categoria, setCategoria] = useState<Categoria>({ id: 0, descricao: "" });
-  const [servico, setServico] = useState<Servico>({} as Servico);
+  const [categoria, setCategoria] = useState<Categoria>({ id: 0, tipoServico: "", foto: "" }); //TODO perguntar para o prof
+  const [servico, setServico] = useState<Servico>({
+    id: 0,
+    nome: "",
+    duracao: "",
+    preco: 0,
+    vagas: 0,
+    gratuidade: false,
+    foto: "",
+    categoria: null,
+    usuario: null,
+  });
 
   const { id } = useParams<{ id: string }>();
 
   const { usuario, handleLogout } = useContext(AuthContext);
   const token = usuario.token;
 
-  async function buscarPostagemPorId(id: string) {
+  async function buscarServicoPorId(id: string) {
     try {
       await buscar(`/servicos/${id}`, setServico, {
         headers: {
@@ -56,13 +73,13 @@ function FormServicos() {
 
   useEffect(() => {
     if (token === "") {
-      ToastAlerta("You precisa estar logado", "info");
+      ToastAlerta("Você precisa estar logado", "info");
       navigate("/");
     }
   }, [token]);
 
   useEffect(() => {
-    buscarTCategorias();
+    buscarCategorias();
 
     if (id !== undefined) {
       buscarServicoPorId(id);
@@ -74,19 +91,18 @@ function FormServicos() {
       ...servico,
       categoria: categoria,
     });
-  }, [categoria]);
+  }, [categoria, usuario]);
 
-  function atualizarEstado(e: ChangeEvent<HTMLInputElement>) {
-    setServico({
-      ...servico,
-      [e.target.name]: e.target.value,
-      categoria: categoria,
-      usuario: usuario,
-    });
-  }
+  const atualizarEstado = (e: ChangeEvent<HTMLInputElement>) => {
+    const { name, value, type, checked } = e.target;
+    setServico((prevServico) => ({
+      ...prevServico,
+      [name]: type === "checkbox" ? checked : value,
+    }));
+  };
 
   function retornar() {
-    navigate("/servicos");
+    navigate("/listarServico");
   }
 
   async function gerarNovaServico(e: ChangeEvent<HTMLFormElement>) {
@@ -132,31 +148,47 @@ function FormServicos() {
     retornar();
   }
 
-  const carregandoCategoria = categoria.descricao === "";
+  const carregandoCategoria = categoria.tipoServico === "";
 
   return (
-    <div className="container flex flex-col mx-auto items-center text-white">
-      <h1 className="text-4xl text-center my-8">{id !== undefined ? "Edit Post" : "Create Post"}</h1>
+    <div className="container flex flex-col mx-auto items-center text-black">
+      <h1 className="text-4xl text-center my-8">{id !== undefined ? "Editar Post" : "Servicos"}</h1>
 
       <form className="flex flex-col w-1/2 gap-4" onSubmit={gerarNovaServico}>
         <div className="flex flex-col gap-2 ">
-          <label htmlFor="titulo">Post Title</label>
-          <input type="text" placeholder="Title" name="titulo" required className="border-2 border-slate-700 rounded p-2 text-black" value={servico.titulo} onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)} />
+          <label htmlFor="nome">Nome</label>
+          <input type="text" placeholder="Nome" name="nome" required className="border-2 border-slate-700 rounded p-2 text-black" value={servico.nome} onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)} />
+        </div>
+        <div className="flex flex-col gap-2 ">
+          <label htmlFor="foto">Foto</label>
+          <input type="text" placeholder="Foto" name="foto" required className="border-2 border-slate-700 rounded p-2 text-black" value={servico.foto} onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)} />
         </div>
         <div className="flex flex-col gap-2">
-          <label htmlFor="texto">Post Text</label>
-          <input type="text" placeholder="Text" name="texto" required className="border-2 border-slate-700 rounded p-2 text-black" value={servico.texto} onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)} />
+          <label htmlFor="duracao">Duração</label>
+          <input type="text" placeholder="Text" name="duracao" required className="border-2 border-slate-700 rounded p-2 text-black" value={servico.duracao} onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)} />
         </div>
         <div className="flex flex-col gap-2">
-          <p>Post Theme</p>
-          <select name="tema" id="tema" className="border p-2 border-slate-800 rounded text-black" onChange={(e) => buscarCategoriaPorId(e.currentTarget.value)}>
+          <label htmlFor="vagas">Vagas</label>
+          <input type="number" placeholder="Vagas" name="vagas" required className="border-2 border-slate-700 rounded p-2 text-black" value={servico.vagas} onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)} />
+        </div>
+        <div className="flex flex-col gap-2">
+          <label htmlFor="gratuito">Gratuito</label>
+          <input type="checkbox" placeholder="Gratuito" name="gratuidade" className="border-2 border-slate-700 rounded p-2 text-black" checked={servico.gratuidade} onChange={atualizarEstado} />
+        </div>
+        <div className="flex flex-col gap-2">
+          <label htmlFor="preco">Preço</label>
+          <input type="number" placeholder="Preço" name="preco" required className="border-2 border-slate-700 rounded p-2 text-black" value={servico.preco} onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)} />
+        </div>
+        <div className="flex flex-col gap-2">
+          <p>Categoria</p>
+          <select name="categoria" id="categoria" className="border p-2 border-slate-800 rounded text-black" onChange={(e) => buscarCategoriaPorId(e.currentTarget.value)}>
             <option value="" selected disabled>
-              Select a Theme
+              Seleciona a Categoria
             </option>
 
             {categorias.map((categoria) => (
               <>
-                <option value={categorias.id}>{categorias.descricao}</option>
+                <option value={categoria.id}>{categoria.tipoServico}</option>
               </>
             ))}
           </select>
@@ -166,9 +198,9 @@ function FormServicos() {
           className="rounded disabled:bg-slate-200
                           hover:bg-blue-900 text-white font-bold w-1/2 
                           mx-auto py-2 flex justify-center"
-          disabled={carregandoCategoria}
+          disabled={carregandoCategoria || isLoading}
         >
-          {isLoading ? <RotatingLines strokeColor="white" strokeWidth="5" animationDuration="0.75" width="24" visible={true} /> : <span>{id !== undefined ? "Update" : "Create"}</span>}
+          {isLoading ? <RotatingLines strokeColor="white" strokeWidth="5" animationDuration="0.75" width="24" visible={true} /> : <span>{id !== undefined ? "Update" : "Cadastre o Serviço"}</span>}
         </button>
       </form>
     </div>
