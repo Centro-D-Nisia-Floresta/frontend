@@ -17,64 +17,51 @@ function Navbar() {
     <>
       <div className="w-full bg-teal-600 text-white flex justify-center font-bold items-center">
         <div className="container flex items-center justify-between text-lg">
-          
+
           <Link to="/home" className="h-24 flex items-center">
             <img src="" alt="LOGO DO PROJETO" />     {/* Colocar imagem do logo */}
           </Link>
 
-<<<<<<< HEAD
-  
-          <div className="flex gap-4 items-center text-xl">
-
-              <div className="hover:underline">Cursos</div>
-
-              <Link to="/cadastroCategoria" className="hover:underline">
-                Categorias
-=======
           <div className="flex gap-4">
             <div className="hover:underline"></div>
-              <Link to="/servicos">Servicos </Link>
+            <Link to="/servicos">Servicos </Link>
 
-              <Link to="/cadastroServico" className="hover:underline">
-                Cadastrar Serviço
-              </Link>
-      
-              <Link to="/cadastroCategoria" className="hover:underline">
-                Cadastrar Categoria
-              </Link>
+            <Link to="/cadastroServico" className="hover:underline">
+              Cadastrar Serviço
+            </Link>
 
-              <Link to="/sobre" className="hover:underline">
-                Sobre
->>>>>>> 9248d8f8091bd3d18e1ff90f07044877545f6df2
-              </Link>
+            <Link to="/cadastroCategoria" className="hover:underline">
+              Cadastrar Categoria
+            </Link>
 
-              <Link to="/contato" className="hover:underline">
-                Contato
-              </Link>
+            <Link to="/sobre" className="hover:underline">
+              Sobre
+            </Link>
 
-<<<<<<< HEAD
-              <Link to="/login" className="hover:underline">
-                Login
-              </Link>
+            <Link to="/contato" className="hover:underline">
+              Contato
+            </Link>
 
-              <div className='rounded px-5 py-1.5 bg-fuchsia-900 hover:bg-teal-100 font-bold hover:text-fuchsia-800 hover:duration-500' ><User size={30} weight="bold"/></div>
+            <Link to="/login" className="hover:underline">
+              Login
+            </Link>
 
-              <Link to="/login" onClick={logout} className='rounded px-5 py-1.5 bg-fuchsia-900 hover:bg-teal-100 font-bold hover:text-fuchsia-800 hover:duration-500'>
-              <SignOut size={30} weight="bold"/>
-              </ Link> 
+            <div className='rounded px-5 py-1.5 bg-fuchsia-900 hover:bg-teal-100 font-bold hover:text-fuchsia-800 hover:duration-500' ><User size={30} weight="bold" /></div>
 
-=======
-              <div className="hover:underline">Perfil</div>
+            <Link to="/login" onClick={logout} className='rounded px-5 py-1.5 bg-fuchsia-900 hover:bg-teal-100 font-bold hover:text-fuchsia-800 hover:duration-500'>
+              <SignOut size={30} weight="bold" />
+            </ Link>
 
-              <Link to="" onClick={logout} className="hover:underline">
-                Sair
-              </Link>
-            </div>
->>>>>>> 9248d8f8091bd3d18e1ff90f07044877545f6df2
+            <div className="hover:underline">Perfil</div>
+
+            <Link to="" onClick={logout} className="hover:underline">
+              Sair
+            </Link>
           </div>
-        </div>  
+        </div >
+      </div>
     </>
   );
 }
-      
+
 export default Navbar;
