@@ -18,9 +18,9 @@ function App() {
       <AuthProvider>
         <BrowserRouter>
           <Navbar />
-          <div className="min-h-[80vh]">
+          {/* <div className="min-h-[80vh]"> */}
             <Routes>
-              <Route path="/" element={<Login />} />
+              <Route path="/" element={<Home />} />
               <Route path="/home" element={<Home />} />
               <Route path="/sobre" element={<Sobre />} />
               <Route path="/contato" element={<Contato />} />
@@ -31,7 +31,7 @@ function App() {
               <Route path="/editarCategoria/:id" element={<FormCategoria />} />
               <Route path="/deletarCategoria/:id" element={<DeletarCategoria />} />
             </Routes>
-          </div>
+          {/* </div> */}
           <Footer />
         </BrowserRouter>
       </AuthProvider>

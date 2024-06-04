@@ -40,9 +40,16 @@ function ListaCategorias() {
   return (
     <>
       {categorias.length === 0 && <DNA visible={true} height="200" width="200" ariaLabel="dna-loading" wrapperStyle={{}} wrapperClass="dna-wrapper mx-auto" />}
-      <div className="flex justify-center w-full my-4">
-        <div className="container flex flex-col">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-2 items-center justify-center w-full pb-2">
+        <div className="flex items-center justify-center">
+          <img src="http://i.imgur.com/VpwApCU.png" alt="IMAGEM DE CATEGORIA" className="w-2/3" />
+        </div>
+        <div className="container flex flex-col items-center justify-center">
+          <div className="flex flex-col items-center justify-center pb-6">
+            <h1 className="text-black font-bold text-3xl">Categorias</h1>
+            <p>Confira todas as nossas categorias</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-x-10 gap-y-6">
             {categorias.map((categoria) => (
               <CardCategoria key={categoria.id} categoria={categoria} />
             ))}
