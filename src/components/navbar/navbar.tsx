@@ -19,7 +19,7 @@ function Navbar() {
         <div className="container flex items-center justify-between text-lg">
 
           <Link to="/home" className="h-24 flex items-center">
-            <img className=" h-[150px]" src="https://ik.imagekit.io/rx2wvtnsm/9.png?updatedAt=1717597188882" alt="LOGO DO PROJETO" />     {/* Colocar imagem do logo */}
+            <img className=" h-[350px]" src="https://ik.imagekit.io/rx2wvtnsm/Nisa%20Floresta%20Branco?updatedAt=1717598564578" alt="LOGO DO PROJETO" />     {/* Colocar imagem do logo */}
           </Link>
 
           <div className="flex items-center justify-center gap-4">
@@ -39,7 +39,7 @@ function Navbar() {
               Login
             </Link>
 
-            <div className='rounded px-2 py-1 bg-fuchsia-900 hover:bg-teal-100 font-bold hover:text-fuchsia-800 hover:duration-500' ><User size={30} weight="regular" /></div>
+            <Link to="/perfil" className='rounded px-2 py-1 bg-fuchsia-900 hover:bg-teal-100 font-bold hover:text-fuchsia-800 hover:duration-500' ><User size={30} weight="regular" /></Link>
 
             <Link to="/login" onClick={logout} className='rounded px-2 py-1 bg-fuchsia-900 hover:bg-teal-100 font-bold hover:text-fuchsia-800 hover:duration-500'>
               <SignOut size={30} weight="regular" />
