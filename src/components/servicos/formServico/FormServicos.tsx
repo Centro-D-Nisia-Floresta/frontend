@@ -1,19 +1,18 @@
 import { ChangeEvent, useContext, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import Categoria from "../../../models/Categoria";
 import { RotatingLines } from "react-loader-spinner";
 import { AuthContext } from "../../../contexts/AuthContext";
 import Servico from "../../../models/Servico";
 import { buscar, atualizar, cadastrar } from "../../../services/Service";
 import { ToastAlerta } from "../../../utils/ToastAlerta";
+import Categoria from "../../../models/Categoria";
 
 function FormServicos() {
   const navigate = useNavigate();
 
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [categorias, setCategorias] = useState<Categoria[]>([]);
-
-  const [categoria, setCategoria] = useState<Categoria>({ id: 0, tipoServico: "", foto: "" }); //TODO perguntar para o prof
+  const [categoria, setCategoria] = useState<Categoria>({ id: 0, tipoServico: "", descricao: "", servico: null }); //TODO perguntar para o prof
   const [servico, setServico] = useState<Servico>({
     id: 0,
     nome: "",
@@ -102,7 +101,7 @@ function FormServicos() {
   };
 
   function retornar() {
-    navigate("/listarServico");
+    navigate("/servicos");
   }
 
   async function gerarNovaServico(e: ChangeEvent<HTMLFormElement>) {

@@ -9,7 +9,7 @@ function Home() {
 
           <div className="flex flex-col text-5xl font-bold py-5 justify-around m-10">
             <h1 className="text-black relative w-fit text-balance font-bold !leading-tight ">Centro de Desenvolvimento {' '}
-              <span className="bg-fuchsia-900 text-white">Nísia Floresta</span>{' '}</h1>
+              <span className="bg-fuchsia-900 text-white hover:bg-teal-500 font-bold hover:text-white">Nísia Floresta</span>{' '}</h1>
           </div>
 
           <div className="flex items-center py-5 justify-around m-10 text-xl">

@@ -11,7 +11,7 @@ function CardCategorias({ categoria }: CardCategoriasProps) {
       
       {/* <div className="w-full items-center justify-center"> */}
         <p className="p-6 text-3xl items-center justify-center flex">{categoria.tipoServico}</p>
-        <p className="items-center justify-center flex">{categoria.foto}</p>
+        <p className="items-center justify-center flex">{categoria.descricao}</p>
       {/* </div> */}
 
       <div className="flex gap-4">

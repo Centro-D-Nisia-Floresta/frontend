@@ -15,16 +15,17 @@ function Navbar() {
 
   return (
     <>
-      <div className="w-full bg-teal-600 text-white flex justify-center font-bold items-center">
+      <div className="w-full bg-teal-600 text-white flex justify-center font-semibold items-center">
         <div className="container flex items-center justify-between text-lg">
 
           <Link to="/home" className="h-24 flex items-center">
-            <img src="" alt="LOGO DO PROJETO" />     {/* Colocar imagem do logo */}
+            <img className=" h-[150px]" src="https://ik.imagekit.io/rx2wvtnsm/9.png?updatedAt=1717597188882" alt="LOGO DO PROJETO" />     {/* Colocar imagem do logo */}
           </Link>
 
-          <div className="flex gap-4">
-            <div className="hover:underline"></div>
-            <Link to="/servicos">Servicos </Link>
+          <div className="flex items-center justify-center gap-4">
+            <Link to="/servicos" className="hover:underline">Serviços </Link>
+
+            <Link to="/categorias" className="hover:underline">Categorias </Link>
 
             <Link to="/cadastroServico" className="hover:underline">
               Cadastrar Serviço
@@ -34,29 +35,15 @@ function Navbar() {
               Cadastrar Categoria
             </Link>
 
-            <Link to="/sobre" className="hover:underline">
-              Sobre
-            </Link>
-
-            <Link to="/contato" className="hover:underline">
-              Contato
-            </Link>
-
             <Link to="/login" className="hover:underline">
               Login
             </Link>
 
-            <div className='rounded px-5 py-1.5 bg-fuchsia-900 hover:bg-teal-100 font-bold hover:text-fuchsia-800 hover:duration-500' ><User size={30} weight="bold" /></div>
+            <div className='rounded px-2 py-1 bg-fuchsia-900 hover:bg-teal-100 font-bold hover:text-fuchsia-800 hover:duration-500' ><User size={30} weight="regular" /></div>
 
-            <Link to="/login" onClick={logout} className='rounded px-5 py-1.5 bg-fuchsia-900 hover:bg-teal-100 font-bold hover:text-fuchsia-800 hover:duration-500'>
-              <SignOut size={30} weight="bold" />
+            <Link to="/login" onClick={logout} className='rounded px-2 py-1 bg-fuchsia-900 hover:bg-teal-100 font-bold hover:text-fuchsia-800 hover:duration-500'>
+              <SignOut size={30} weight="regular" />
             </ Link>
-
-            <div className="hover:underline">Perfil</div>
-
-            <Link to="" onClick={logout} className="hover:underline">
-              Sair
-            </Link>
           </div>
         </div >
       </div>

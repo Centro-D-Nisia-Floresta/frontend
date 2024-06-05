@@ -39,6 +39,8 @@ function ListaCategorias() {
 
   return (
     <>
+
+<div className="min-h-[80vh]"> </div>
       {categorias.length === 0 && <DNA visible={true} height="200" width="200" ariaLabel="dna-loading" wrapperStyle={{}} wrapperClass="dna-wrapper mx-auto" />}
       <div className="grid grid-cols-2 items-center justify-center w-full pb-2">
         <div className="flex items-center justify-center">
