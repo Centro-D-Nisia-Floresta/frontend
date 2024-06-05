@@ -4,6 +4,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { buscar, deletar } from "../../../services/Service";
 import Categoria from "../../../models/Categoria";
 import { AuthContext } from "../../../contexts/AuthContext";
+import { ToastAlerta } from "../../../utils/ToastAlerta";
 
 function DeletarCategoria() {
   const navigate = useNavigate();
