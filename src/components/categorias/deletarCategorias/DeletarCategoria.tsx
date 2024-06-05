@@ -32,7 +32,7 @@ function DeletarCategoria() {
 
   useEffect(() => {
     if (token === "") {
-      alert("Você precisa estar logado");
+      ToastAlerta("Você precisa estar logado", "info");
       navigate("/");
     }
   }, [token]);
@@ -53,12 +53,12 @@ function DeletarCategoria() {
         },
       });
 
-      alert("Categoria deletada com sucesso");
+      ToastAlerta("Categoria deletada com sucesso", "sucesso");
     } catch (error: any) {
       if (error.toString().includes("401")) {
         handleLogout();
       } else {
-        alert("Erro ao deletar categoria.");
+        ToastAlerta("Erro ao deletar categoria", "sucesso");
       }
     }
 
