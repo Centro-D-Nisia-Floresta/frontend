@@ -5,7 +5,7 @@ import { SignOut, User } from "@phosphor-icons/react";
 
 function Navbar() {
   const navigate = useNavigate();
-  const { handleLogout } = useContext(AuthContext);
+  const { handleLogout, usuario } = useContext(AuthContext);
 
   function logout() {
     handleLogout();
@@ -23,17 +23,21 @@ function Navbar() {
           </Link>
 
           <div className="flex items-center justify-center gap-4">
+            {usuario.tipo === "adm" ?
+              <Link to="/cadastroServico" className="hover:underline">
+                Cadastrar Serviço
+              </Link> : <div></div>
+            }
+
+            {usuario.tipo === "adm" ?
+              <Link to="/cadastroCategoria" className="hover:underline">
+                Cadastrar Categoria
+              </Link> : <div></div>
+            }
+
             <Link to="/servicos" className="hover:underline">Serviços </Link>
 
             <Link to="/categorias" className="hover:underline">Categorias </Link>
-
-            <Link to="/cadastroServico" className="hover:underline">
-              Cadastrar Serviço
-            </Link>
-
-            <Link to="/cadastroCategoria" className="hover:underline">
-              Cadastrar Categoria
-            </Link>
 
             <Link to="/login" className="hover:underline">
               Login

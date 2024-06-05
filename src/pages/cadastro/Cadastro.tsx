@@ -13,6 +13,7 @@ function Cadastro() {
   const [usuario, setUsuario] = useState<Usuario>({
     id: 0,
     nome: "",
+    tipo: "",
     usuario: "",
     senha: "",
     dataNascimento: "",

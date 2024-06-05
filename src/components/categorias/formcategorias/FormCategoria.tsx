@@ -100,8 +100,8 @@ function FormCategoria() {
         </div>
 
         <div className="flex flex-col gap-2">
-          <label htmlFor="foto">Foto</label>
-          <input type="text" placeholder="Adicione uma imagem" name="foto" className="border-2 border-slate-700 rounded p-2" value={categoria.descricao} onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)} />
+          <label htmlFor="descricao">Descrição</label>
+          <input type="text" placeholder="Adicione uma imagem" name="descricao" className="border-2 border-slate-700 rounded p-2" value={categoria.descricao} onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)} />
         </div>
         <button
           className="rounded text-slate-100 bg-indigo-400 
