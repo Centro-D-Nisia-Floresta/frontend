@@ -12,7 +12,7 @@ function FormServicos() {
 
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [categorias, setCategorias] = useState<Categoria[]>([]);
-  const [categoria, setCategoria] = useState<Categoria>({ id: 0, tipoServico: "", descricao: "", servico: null }); //TODO perguntar para o prof
+  const [categoria, setCategoria] = useState<Categoria>({ id: 0, tipoServico: "", descricao: "", servico: null });
   const [servico, setServico] = useState<Servico>({
     id: 0,
     nome: "",
@@ -116,13 +116,13 @@ function FormServicos() {
           },
         });
 
-        ToastAlerta("Post successfully updated", "success");
+        ToastAlerta("O serviço foi cadastrado com sucesso!", "successo");
       } catch (error: any) {
         console.log(error);
         if (error.toString().includes("401")) {
           handleLogout();
         } else {
-          ToastAlerta("Error updating Post", "error");
+          ToastAlerta("Erro ao atualizar o serviço", "error");
         }
       }
     } else {
@@ -133,12 +133,12 @@ function FormServicos() {
           },
         });
 
-        ToastAlerta("Post created successfully", "success");
+        ToastAlerta("O serviço foi cadastrado com sucesso", "successo");
       } catch (error: any) {
         if (error.toString().includes("401")) {
           handleLogout();
         } else {
-          ToastAlerta("Error when creating the Post", "error");
+          ToastAlerta("Erro ao cadastrar o serviço", "error");
         }
       }
     }
