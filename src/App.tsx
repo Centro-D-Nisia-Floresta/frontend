@@ -42,6 +42,7 @@ function App() {
               <Route path="/cadastroServico" element={<FormServicos />} />
               <Route path="/deletarServico/:id" element={<DeletarServico />} />
               <Route path="/editarServico/:id" element={<FormServicos />} />
+            
               <Route path="/perfil" element={<Perfil />} />
             </Routes>
           </div>
