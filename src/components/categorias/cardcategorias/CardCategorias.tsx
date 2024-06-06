@@ -12,7 +12,12 @@ function CardCategorias({ categoria }: CardCategoriasProps) {
       
         <Cards size={32} />
         <p className="pb-4 text-3xl flex font-semibold">{categoria.tipoServico}</p>
+<<<<<<< HEAD
       <p className="flex">{categoria.descricao}</p>
+=======
+        <p className="flex">{categoria.descricao}</p>
+
+>>>>>>> 3979a30947b225f4bd798c93be13906eb3c602c2
       
 
       <div className="flex gap-4">
