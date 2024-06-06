@@ -67,7 +67,7 @@ function Sobre() {
                             <img src="https://ik.imagekit.io/rx2wvtnsm/Sobre%20n%C3%B3s/lucas500.png?updatedAt=1717693448809" className="rounded-2xl" alt="Imagem Lucas" />
                         </div>
                         <div className="flex flex-col">
-                            <h3 className="my-px text-2xl font-semibold">Lucas</h3>
+                            <h3 className="my-px text-2xl font-semibold">Lucas Cardoso</h3>
                             <p>Guitarrista, fascinado por música, literatura, e cinema!.</p>
                             <div className="flex gap-2">
                                 <a href="https://www.linkedin.com/in/lucas-henrique-ferreira-cardoso-/"><LinkedinLogo size={32} weight="light" /></a>
@@ -112,7 +112,7 @@ function Sobre() {
                         </div>
                         <div className="flex flex-col">
                             <h3 className="my-px text-2xl font-semibold">Pamela Rodrigues</h3>
-                            <p>Praticante de yoga, adepta ao DIY gatos e tecnologia.</p>
+                            <p>Praticante de yoga, adepta ao DIY, gatos e tecnologia.</p>
                             <div className="flex gap-2">
                                 <a href="https://www.linkedin.com/in/pamelarodriguesqueiroz/"><LinkedinLogo size={32} weight="light" /></a>
                                 <a href="https://github.com/PamelaZuni"><GithubLogo size={32} weight="light" /></a>

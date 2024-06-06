@@ -1,4 +1,4 @@
-import { Envelope, GithubLogo, LinkedinLogo } from "@phosphor-icons/react"
+import { Envelope, GithubLogo} from "@phosphor-icons/react"
 import { Link } from "react-router-dom"
 
 function Footer() {
@@ -18,11 +18,9 @@ function Footer() {
 
                     <div className="flex items-center justify-center gap-2 text-x font-semibold">
 
-                        <a target="_blank" href="https://github.com/Centro-D-Nisia-Floresta"><LinkedinLogo size={36} weight="regular" /> {/* Colocar âncora para Linkedin */}
-                        </a>
                         <a target="_blank" href="https://github.com/Centro-D-Nisia-Floresta"><GithubLogo size={36} weight="regular" />
                         </a>
-                        <a target="_blank" href=""><Envelope size={36} weight="regular" />  {/* Colocar âncora para email */}
+                        <a target="_blank" href="cdnisiafloresta@gmail.com"><Envelope size={36} weight="regular" />
                         </a>
                         
                     </div>
