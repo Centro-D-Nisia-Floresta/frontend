@@ -63,7 +63,7 @@ function Cadastro() {
   return (
     <>
       <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
-      <div className="bg-teal-500 flex h-screen items-center justify-center font-bold ">
+      <div className="bg-teal-500 flex h-screen items-center justify-center font-bold">
         { }
 
         <div className="bg-white rounded-xl border-4 border-fuchsia-900 w-1/3 ">

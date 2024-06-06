@@ -15,12 +15,14 @@ function Navbar() {
 
   return (
     <>
-      <div className="w-full bg-teal-600 text-white flex justify-center font-semibold items-center">
+      <div className=" bg-teal-600 text-white flex justify-center font-semibold items-center">
         <div className="container flex items-center justify-between text-lg">
 
+          <div className="">
           <Link to="/home" className="h-24 flex items-center">
-            <img className=" h-[350px]" src="https://ik.imagekit.io/rx2wvtnsm/Nisa%20Floresta%20Branco?updatedAt=1717598564578" alt="LOGO DO PROJETO" />     {/* Colocar imagem do logo */}
-          </Link>
+            <img className="h-[350px]" src="https://ik.imagekit.io/rx2wvtnsm/Nisa%20Floresta%20Branco?updatedAt=1717598564578" alt="LOGO DO PROJETO" />     {/* Colocar imagem do logo */}
+            </Link>
+          </div>
 
           <div className="flex items-center justify-center gap-4">
             {usuario.tipo === "adm" ?
