@@ -13,21 +13,21 @@ function CardServico({ servico }: CardServicosProps) {
 
     <div className="flex flex-col overflow-hidden justify-between max-w-[22rem] bg-teal-600">
         <div className="flex w-full bg-teal-500 ">
-          <img src="https://placehold.co/600x400" alt="Foto Serviço" /> 
+          <img src={servico.foto} alt="Foto Serviço" /> 
           {/* <input type="text" placeholder=""></input> */}
-          <h3>{servico.usuario?.nome}</h3>
+          <h3 className="flex text-center">{servico.usuario?.nome}</h3>
         </div>
-        <h4 className="flex text-2xl ">{servico.nome}</h4>
-        <div className="flex pb-4 text-1xl font-semibold flex-col">
-          <p className="pb-4 text-1xl flex ">Categoria: {servico.categoria?.tipoServico}</p>
-          <p className="flex  text-1xl ">Gratuito: {servico.gratuidade}</p>
-          <p className="flex">Valor: {servico.preco}</p>
-          <p className="flex">Vagas: {servico.vagas}</p>
-          <p className="flex ">Duracao: {servico.duracao}</p>
+        <h4 className="flex text-center mt-2 text-2xl ">{servico.nome}</h4>
+        <div className="flex text-center pb-4 text-1xl font-semibold flex-col">
+          <p className="pb-4 text-center text-1xl flex ">Categoria: {servico.categoria?.tipoServico}</p>
+          <p className="flex text-center text-1xl ">Gratuito: {servico.gratuidade}</p>
+          <p className="flex text-center">Valor: {servico.preco}</p>
+          <p className="flex text-center">Vagas: {servico.vagas}</p>
+          <p className="flex text-center">Duracao: {servico.duracao}</p>
         </div>
 
 
-      <div className="flex gap-4">
+      <div className="flex">
         <Link className="w-full mt-5 bg-fuchsia-900 hover:bg-teal-100 hover:text-fuchsia-800 font-bold text-white flex items-center justify-center py-2" to={`/editarServico/${servico.id}`}>
           <button>Editar</button>
         </Link>

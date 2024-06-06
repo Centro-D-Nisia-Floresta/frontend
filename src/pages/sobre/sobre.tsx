@@ -3,12 +3,12 @@ import { Envelope, GithubLogo, LinkedinLogo } from "@phosphor-icons/react"
 function Sobre() {
     return (
         <>
-            <div className="grid grid-row-2 gap-5 bg-teal-200">
+            <div className="grid grid-row-2 gap-5 bg-teal-100">
                 <div className="grid grid-cols-2 m-5 items-center justify-center">
                     <div className="flex items-center justify-center">
                         <img src="https://ik.imagekit.io/rx2wvtnsm/6.png?updatedAt=1717597758631" className="w-2/3" alt="Logo" />
                     </div>
-                    <div className="flex flex-col gap-2 p-5 bg-teal-200">
+                    <div className="flex flex-col gap-2 p-5 bg-teal-100">
                         <h1 className="text-black text-5xl font-bold pb-3 pt-3">Sobre nosso projeto</h1>
                         <p className="text-xl">Somos o Centro de Desenvolvimento Nísia Floresta, e nosso projeto busca promover a igualdade de gênero e empoderar mulheres e meninas. Utilizando a tecnologia, queremos enfrentar os desafios do mercado de trabalho, identificando barreiras e promovendo oportunidades justas. Através da nossa aplicação, ofereceremos recursos educacionais, mentoria e palestras, contribuindo para o crescimento pessoal e profissional das mulheres. Nosso objetivo é criar um ambiente mais inclusivo, onde todas tenham as mesmas chances de sucesso.</p>
                     </div>
@@ -17,7 +17,7 @@ function Sobre() {
                     <hr className="border-teal-700 w-2/3 mt-3"/>
                 </div>
                 <h2 className="text-black text-5xl font-bold pt-7 pl-24">Integrantes</h2>
-                <div className="grid grid-cols-3 gap-2 bg-teal-200 m-10">
+                <div className="grid grid-cols-3 gap-2 bg-teal-100 m-10">
                     <div className="flex m-4 gap-4" id="Beatriz">
                         <div>
                             <img src="https://ik.imagekit.io/rx2wvtnsm/Sobre%20n%C3%B3s/beatriz500.png?updatedAt=1717691216053" className="rounded-2xl" alt="Imagem Beatriz" />
@@ -54,7 +54,7 @@ function Sobre() {
                         </div>
                         <div className="flex flex-col">
                             <h3 className="my-px text-2xl font-semibold">Ingrid Dias</h3>
-                            <p>Amante de animes, livros, games, música, tecnologia e cultura geek.</p>
+                            <p>Apaixonada por pets, livros, cinema e noite de jogos com os amigos.</p>
                             <div className="flex gap-2">
                                 <a href="www.linkedin.com/in/ingrid-dias-souza"><LinkedinLogo size={32} weight="light" /></a>
                                 <a href="https://github.com/ingrid-dias"><GithubLogo size={32} weight="light" /></a>
@@ -68,7 +68,7 @@ function Sobre() {
                         </div>
                         <div className="flex flex-col">
                             <h3 className="my-px text-2xl font-semibold">Lucas Cardoso</h3>
-                            <p>Guitarrista, fascinado por música, literatura, e cinema!.</p>
+                            <p>Guitarrista, fascinado por música, literatura e audiovisual.</p>
                             <div className="flex gap-2">
                                 <a href="https://www.linkedin.com/in/lucas-henrique-ferreira-cardoso-/"><LinkedinLogo size={32} weight="light" /></a>
                                 <a href="https://github.com/lucashfcardoso"><GithubLogo size={32} weight="light" /></a>

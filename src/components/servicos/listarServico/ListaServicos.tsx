@@ -43,7 +43,7 @@ function ListaServicos() {
                 animação
             )} */}
 
-      <div className="container flex  items-center justify-center mx-auto my-20">
+      <div className="container flex  items-center justify-center mx-auto my-20 bg">
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-20 gap-6">
           {servico.map((servico) => (

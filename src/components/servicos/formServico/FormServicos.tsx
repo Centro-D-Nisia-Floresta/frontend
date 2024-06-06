@@ -196,13 +196,13 @@ function FormServicos() {
           type="submit"
           className="rounded disabled:bg-slate-200
                           hover:bg-teal-100 hover: text-fuchsia-800 font-bold w-1/2 
-                          mx-auto py-2 flex justify-center
+                          mx-auto m-4 py-2 flex justify-center
                           "
                      
 
           disabled={carregandoCategoria || isLoading}
         >
-          {isLoading ? <RotatingLines strokeColor="white" strokeWidth="5" animationDuration="0.75" width="24" visible={true} /> : <span>{id !== undefined ? "Update" : "Cadastre o Serviço"}</span>}
+          {isLoading ? <RotatingLines strokeColor="white" strokeWidth="5" animationDuration="0.75" width="24" visible={true} /> : <span>{id !== undefined ? "Atualizar" : "Cadastre o Serviço"}</span>}
         </button>
       </form>
     </div>

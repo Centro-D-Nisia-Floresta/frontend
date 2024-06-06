@@ -41,6 +41,8 @@ function Navbar() {
 
             <Link to="/categorias" className="hover:underline">Categorias </Link>
 
+            <Link to="/sobre" className="hover:underline">Sobre nós</Link>
+
             <Link to="/login" className="hover:underline">
               Login
             </Link>
