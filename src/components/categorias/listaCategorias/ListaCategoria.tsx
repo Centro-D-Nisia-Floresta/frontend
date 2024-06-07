@@ -6,6 +6,7 @@ import { buscar } from "../../../services/Service";
 import Categoria from "../../../models/Categoria";
 import { AuthContext } from "../../../contexts/AuthContext";
 import ModalCategorias from "../modalCategorias/ModalCategorias";
+import { ToastAlerta } from "../../../utils/ToastAlerta";
 
 function ListaCategorias() {
   const navigate = useNavigate();
@@ -29,7 +30,7 @@ function ListaCategorias() {
 
   useEffect(() => {
     if (token === "") {
-      alert("Você precisa estar logado!");
+      ToastAlerta("Você precisa estar logado!", 'info');
       navigate("/");
     }
   }, [token]);

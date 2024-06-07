@@ -4,6 +4,7 @@ import { AuthContext } from "../../../contexts/AuthContext";
 import Servico from "../../../models/Servico";
 import { buscar, deletar } from "../../../services/Service";
 import { RotatingLines } from "react-loader-spinner";
+import { ToastAlerta } from "../../../utils/ToastAlerta";
 
 function DeletarServico() {
   const navigate = useNavigate();
@@ -32,7 +33,7 @@ function DeletarServico() {
 
   useEffect(() => {
     if (token === "") {
-      alert("Você precisa estar logado");
+      ToastAlerta("Você precisa estar logado", 'info');
       navigate("/login");
     }
   }, [token]);
@@ -52,12 +53,12 @@ function DeletarServico() {
           Authorization: token,
         },
       });
-      alert("Servico apagado com sucesso");
+      ToastAlerta("Servico apagado com sucesso", 'sucesso');
     } catch (error: any) {
       if (error.toString().includes("401")) {
         handleLogout();
       } else {
-        alert("Erro ao deletar o servico.");
+        ToastAlerta("Erro ao deletar o servico.", 'erro');
       }
     }
 

@@ -4,6 +4,7 @@ import { Link } from "react-router-dom"
 function Footer() {
     return (
         <>
+            
             <div className="flex flex-col justify-center bg-teal-600 text-white items-center py-1 px-4">
                 <div className="container flex justify-around items-center py-4">
                     <p className="text-xl font-bold">Centro D. Nisia Floresta</p>
@@ -26,6 +27,7 @@ function Footer() {
                     </div>
                 </div>
             </div>
+            
         </>
     )
 }
