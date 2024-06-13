@@ -14,11 +14,17 @@ import FormServicos from "./components/servicos/formServico/FormServicos";
 import ListaServicos from "./components/servicos/listarServico/ListaServicos";
 import DeletarServico from "./components/servicos/deletarServico/DeletarServico";
 import Perfil from "./pages/perfil/Perfil";
+<<<<<<< HEAD
+=======
+import { ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css'
+>>>>>>> fcf2208d18f1cd28bdafdd2403f9b20f6742e7a2
 
 function App() {
   return (
     <>
       <AuthProvider>
+        <ToastContainer/>
         <BrowserRouter>
           <Navbar />
           <div className="min-h-[80vh]">
@@ -39,12 +45,16 @@ function App() {
               <Route path="/cadastroServico" element={<FormServicos />} />
               <Route path="/deletarServico/:id" element={<DeletarServico />} />
               <Route path="/editarServico/:id" element={<FormServicos />} />
+<<<<<<< HEAD
 
+=======
+            
+>>>>>>> fcf2208d18f1cd28bdafdd2403f9b20f6742e7a2
               <Route path="/perfil" element={<Perfil />} />
             </Routes>
           </div>
           <Footer />
-        </BrowserRouter>
+          </BrowserRouter>
       </AuthProvider>
     </>
   );

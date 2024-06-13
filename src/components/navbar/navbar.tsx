@@ -2,38 +2,52 @@ import { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthContext";
 import { SignOut, User } from "@phosphor-icons/react";
+import { ToastAlerta } from "../../utils/ToastAlerta";
 
 function Navbar() {
   const navigate = useNavigate();
-  const { handleLogout } = useContext(AuthContext);
+  const { handleLogout, usuario } = useContext(AuthContext);
 
   function logout() {
     handleLogout();
-    alert(`Você foi desconectado!`);
+    ToastAlerta(`Você foi desconectado!`, 'info');
     navigate("/login");
   }
 
   return (
     <>
-      <div className="w-full bg-teal-600 text-white flex justify-center font-semibold items-center">
+      <div className=" bg-teal-600 text-white flex justify-center font-semibold items-center">
         <div className="container flex items-center justify-between text-lg">
 
+          <div className="">
           <Link to="/home" className="h-24 flex items-center">
+<<<<<<< HEAD
             <img className=" h-[350px]" src="https://ik.imagekit.io/rx2wvtnsm/Nisa%20Floresta%20Branco?updatedAt=1717598564578" alt="LOGO DO PROJETO" />     {/* Colocar imagem do logo */}
           </Link>
+=======
+            <img className="h-[350px]" src="https://ik.imagekit.io/rx2wvtnsm/Nisa%20Floresta%20Branco?updatedAt=1717598564578" alt="LOGO DO PROJETO" />     {/* Colocar imagem do logo */}
+            </Link>
+          </div>
+>>>>>>> fcf2208d18f1cd28bdafdd2403f9b20f6742e7a2
 
           <div className="flex items-center justify-center gap-4">
+            {usuario.tipo === "adm" ?
+              <Link to="/cadastroServico" className="hover:underline">
+                Cadastrar Serviço
+              </Link> : <div></div>
+            }
+
+            {usuario.tipo === "adm" ?
+              <Link to="/cadastroCategoria" className="hover:underline">
+                Cadastrar Categoria
+              </Link> : <div></div>
+            }
+
             <Link to="/servicos" className="hover:underline">Serviços </Link>
 
             <Link to="/categorias" className="hover:underline">Categorias </Link>
 
-            <Link to="/cadastroServico" className="hover:underline">
-              Cadastrar Serviço
-            </Link>
-
-            <Link to="/cadastroCategoria" className="hover:underline">
-              Cadastrar Categoria
-            </Link>
+            <Link to="/sobre" className="hover:underline">Sobre nós</Link>
 
             <Link to="/login" className="hover:underline">
               Login

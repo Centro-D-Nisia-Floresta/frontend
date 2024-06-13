@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import Usuario from "../../models/Usuario";
 import { RotatingLines } from "react-loader-spinner";
 import { cadastrarUsuario } from "../../services/Service";
+import { ToastAlerta } from "../../utils/ToastAlerta";
 
 function Cadastro() {
   const navigate = useNavigate();
@@ -13,6 +14,7 @@ function Cadastro() {
   const [usuario, setUsuario] = useState<Usuario>({
     id: 0,
     nome: "",
+    tipo: "",
     usuario: "",
     senha: "",
     dataNascimento: "",
@@ -48,12 +50,12 @@ function Cadastro() {
     if (confirmaSenha === usuario.senha && usuario.senha.length >= 8) {
       try {
         await cadastrarUsuario(`/usuarios/cadastrar`, usuario, setUsuario);
-        alert("Cadastro realizado com sucesso!");
+        ToastAlerta("Cadastro realizado com sucesso!", 'sucesso');
       } catch (error) {
-        alert("Erro ao cadastrar!");
+        ToastAlerta("Erro ao cadastrar!", 'erro');
       }
     } else {
-      alert("As senhas não coincidem!"), setUsuario({ ...usuario, senha: "" });
+      ToastAlerta("As senhas não coincidem!", 'info'), setUsuario({ ...usuario, senha: "" });
       setConfirmaSenha("");
     }
     setIsLoading(false);
@@ -62,7 +64,7 @@ function Cadastro() {
   return (
     <>
       <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
-      <div className="bg-teal-500 flex h-screen items-center justify-center font-bold ">
+      <div className="bg-teal-500 flex h-screen items-center justify-center font-bold">
         { }
 
         <div className="bg-white rounded-xl border-4 border-fuchsia-900 w-1/3 ">

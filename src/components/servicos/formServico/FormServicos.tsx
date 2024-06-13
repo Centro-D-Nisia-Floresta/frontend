@@ -12,7 +12,7 @@ function FormServicos() {
 
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [categorias, setCategorias] = useState<Categoria[]>([]);
-  const [categoria, setCategoria] = useState<Categoria>({ id: 0, tipoServico: "", descricao: "", servico: null }); //TODO perguntar para o prof
+  const [categoria, setCategoria] = useState<Categoria>({ id: 0, tipoServico: "", descricao: "", servico: null });
   const [servico, setServico] = useState<Servico>({
     id: 0,
     nome: "",
@@ -116,13 +116,13 @@ function FormServicos() {
           },
         });
 
-        ToastAlerta("Post successfully updated", "success");
+        ToastAlerta("O serviço foi cadastrado com sucesso!", "successo");
       } catch (error: any) {
         console.log(error);
         if (error.toString().includes("401")) {
           handleLogout();
         } else {
-          ToastAlerta("Error updating Post", "error");
+          ToastAlerta("Erro ao atualizar o serviço", "error");
         }
       }
     } else {
@@ -133,12 +133,12 @@ function FormServicos() {
           },
         });
 
-        ToastAlerta("Post created successfully", "success");
+        ToastAlerta("O serviço foi cadastrado com sucesso", "successo");
       } catch (error: any) {
         if (error.toString().includes("401")) {
           handleLogout();
         } else {
-          ToastAlerta("Error when creating the Post", "error");
+          ToastAlerta("Erro ao cadastrar o serviço", "error");
         }
       }
     }
@@ -195,11 +195,14 @@ function FormServicos() {
         <button
           type="submit"
           className="rounded disabled:bg-slate-200
-                          hover:bg-blue-900 text-white font-bold w-1/2 
-                          mx-auto py-2 flex justify-center"
+                          hover:bg-teal-100 hover: text-fuchsia-800 font-bold w-1/2 
+                          mx-auto m-4 py-2 flex justify-center
+                          "
+                     
+
           disabled={carregandoCategoria || isLoading}
         >
-          {isLoading ? <RotatingLines strokeColor="white" strokeWidth="5" animationDuration="0.75" width="24" visible={true} /> : <span>{id !== undefined ? "Update" : "Cadastre o Serviço"}</span>}
+          {isLoading ? <RotatingLines strokeColor="white" strokeWidth="5" animationDuration="0.75" width="24" visible={true} /> : <span>{id !== undefined ? "Atualizar" : "Cadastre o Serviço"}</span>}
         </button>
       </form>
     </div>

@@ -13,7 +13,10 @@ function CardCategorias({ categoria }: CardCategoriasProps) {
         <Cards size={32} />
         <p className="pb-4 text-3xl flex font-semibold">{categoria.tipoServico}</p>
         <p className="flex">{categoria.descricao}</p>
+<<<<<<< HEAD
       
+=======
+>>>>>>> fcf2208d18f1cd28bdafdd2403f9b20f6742e7a2
 
       <div className="flex gap-4">
         <Link className="w-full mt-5 bg-fuchsia-900 hover:bg-teal-100 hover:text-fuchsia-800 font-bold text-white flex items-center justify-center py-2" to={`/editarcategoria/${categoria.id}`}>

@@ -1,6 +1,7 @@
 import { createContext, ReactNode, useState } from "react";
 import UsuarioLogin from "../models/UsuarioLogin";
 import { login } from "../services/Service";
+import { ToastAlerta } from "../utils/ToastAlerta";
 
 interface AuthContextProps {
   usuario: UsuarioLogin;
@@ -19,6 +20,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
   const [usuario, setUsuario] = useState<UsuarioLogin>({
     id: 0,
     nome: "",
+    tipo: "",
     usuario: "",
     senha: "",
     foto: "",
@@ -31,10 +33,10 @@ export function AuthProvider({ children }: AuthProviderProps) {
     setIsLoading(true);
     try {
       await login(`/usuarios/logar`, userLogin, setUsuario);
-      alert("Usuário autenticado com sucesso!");
+      ToastAlerta("Usuário autenticado com sucesso!", 'sucesso');
       setIsLoading(false);
     } catch (error) {
-      alert("Falha na autenticação! Verifique as informações.");
+      ToastAlerta("Falha na autenticação! Verifique as informações.", 'erro');
       setIsLoading(false);
     }
   }
@@ -43,6 +45,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
     setUsuario({
       id: 0,
       nome: "",
+      tipo:"",
       usuario: "",
       senha: "",
       foto: "",
