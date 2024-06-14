@@ -8,7 +8,7 @@ interface CardCategoriasProps {
 
 function CardCategorias({ categoria }: CardCategoriasProps) {
   return (
-    <div className="flex flex-col overflow-hidden justify-between max-w-[22rem]">
+    <div className="flex flex-col overflow-hidden justify-between max-w-[22rem] bg-bright-turquoise-200 rounded-xl shadow-xl p-5">
       
         <Cards size={32} />
         <p className="pb-4 text-3xl flex font-semibold">{categoria.tipoServico}</p>

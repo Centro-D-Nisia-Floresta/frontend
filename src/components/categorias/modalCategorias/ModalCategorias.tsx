@@ -3,8 +3,8 @@ import { Link } from "react-router-dom"
 function ModalCategorias() {
     return (
         <>
-            <div className="grid grid-cols-2 items-center justify-center bg-teal-400">
-                <div className="bg-teal-600 items-center rounded-lg justify-center m-20">
+            <div className="grid grid-cols-2 items-center justify-center bg-gradient-to-b from-bright-turquoise-200 to-magenta-/-fuchsia-200">
+                <div className="bg-white items-center rounded-lg justify-center m-20 shadow-lg">
                     <div className="flex flex-col">
                         <h2 className="flex items-center justify-center font-semibold text-4xl pt-6" >Cursos</h2>
                         <p className="m-4 text-center">Está buscando ampliar seus conhecimentos e desenvolver novas habilidades, nossos cursos são perfeitos para você!</p>
@@ -23,7 +23,7 @@ function ModalCategorias() {
                     </div>
                 </div>
 
-                <div className="bg-teal-600 items-center rounded-lg justify-center m-20">
+                <div className="bg-white items-center rounded-lg justify-center m-20 shadow-lg">
                     <div className="flex flex-col">
                         <h2 className="flex items-center justify-center font-semibold text-4xl pt-6" >Palestras</h2>
                         <p className="m-4 text-center">Quer se inspirar e obter insights de grandes profissionais? Nossas mentorias oferecem o suporte individual que você precisa.</p>
@@ -42,7 +42,7 @@ function ModalCategorias() {
                     </div>
                 </div>
 
-                <div className="bg-teal-600 items-center rounded-lg justify-center m-20">
+                <div className="bg-white items-center rounded-lg justify-center m-20 shadow-lg">
                     <div className="flex flex-col">
                         <h2 className="flex items-center justify-center font-semibold text-4xl pt-6" >Workshops</h2>
                         <p className="m-4 text-center">Nossos workshops são experiências imersivas, ideais para quem deseja aprender de forma prática e dinâmica.</p>
@@ -61,7 +61,7 @@ function ModalCategorias() {
                     </div>
                 </div>
 
-                <div className="bg-teal-600 items-center rounded-lg justify-center m-20">
+                <div className="bg-white items-center rounded-lg justify-center m-20 shadow-lg">
                     <div className="flex flex-col">
                         <h2 className="flex items-center justify-center font-semibold text-4xl pt-6" >Mentorias</h2>
                         <p className="m-4 text-center">Precisa de orientação personalizada para alcançar seus objetivos? Nossas mentorias oferecem o suporte individual que você precisa.</p>

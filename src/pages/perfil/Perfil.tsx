@@ -17,7 +17,7 @@ function Perfil() {
 
     return (
 
-        <div className='bg-white min-h-[80vh] pt-1'>
+        <div className=' min-h-[80vh] pt-1'>
 
             <div className='bg-fuchsia-900 container mx-auto mt-4 rounded-xl overflow-hidden'>
                 <img className='w-screen h-72 object-cover border-b-8 bg-white' src="https://ik.imagekit.io/rx2wvtnsm/Dayflow_-_Socializing_2.png" alt="Capa do Perfil" />

@@ -1,33 +1,34 @@
-import { Envelope, GithubLogo} from "@phosphor-icons/react"
+import { Envelope, GithubLogo } from "@phosphor-icons/react"
 import { Link } from "react-router-dom"
 
 function Footer() {
     return (
         <>
-            
-            <div className="flex flex-col justify-center bg-teal-600 text-white items-center py-1 px-4">
-                <div className="container flex justify-around items-center py-4">
-                    <p className="text-xl font-bold">Centro D. Nisia Floresta</p>
-                    
-                    <div className="flex flex-col items-center justify-center">
-                        <Link to="/contato" className="hover:underline text-white font-semibold">
-                        Fale conosco
+            <div className="m-6">
+                <div className="flex justify-between items-center bg-white text-black py-1 px-4 mx-10 ">
+                    <p className="text-xl font-bold flex-1">Centro D. Nísia Floresta</p>
+
+                    <div className="flex-1 flex justify-center">
+                        <Link to="/contato" className="hover:underline font-semibold">
+                            Fale conosco
                         </Link>
-                        <hr className="border-white w-3/4 justify-center mt-3"/>   
-                        <p className="pt-3">© 2024 CDNF | Todos os direitos reservados.</p>
                     </div>
 
-                    <div className="flex items-center justify-center gap-2 text-x font-semibold">
-
-                        <a target="_blank" href="https://github.com/Centro-D-Nisia-Floresta"><GithubLogo size={36} weight="regular" />
+                    <div className="flex-1 flex justify-end gap-3">
+                        <a target="_blank" href="https://github.com/Centro-D-Nisia-Floresta">
+                            <GithubLogo size={36} weight="regular" />
                         </a>
-                        <a target="_blank" href="cdnisiafloresta@gmail.com"><Envelope size={36} weight="regular" />
+                        <a target="_blank" href="cdnisiafloresta@gmail.com">
+                            <Envelope size={36} weight="regular" />
                         </a>
-                        
                     </div>
                 </div>
+
+                <div className="flex flex-col justify-center items-center gap-3 pb-[-50px]">
+                    <hr className="border-black w-[26%] justify-center mt-3" />
+                    <p className="pt-3">© 2024 CDNF | Projeto Integrador - ODS 5</p>
+                </div>
             </div>
-            
         </>
     )
 }

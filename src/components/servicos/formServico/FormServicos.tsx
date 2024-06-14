@@ -150,61 +150,73 @@ function FormServicos() {
   const carregandoCategoria = categoria.tipoServico === "";
 
   return (
-    <div className="container flex flex-col mx-auto items-center text-black">
-      <h1 className="text-4xl text-center my-8">{id !== undefined ? "Editar Post" : "Servicos"}</h1>
+    <div className="bg-gradient-to-b from-bright-turquoise-200 to-magenta-/-fuchsia-200">
+      <div className="container flex flex-col mx-auto items-center text-black bg-white p-5 md:w-[56%] border-2 rounded-xl">
+        <h1 className="text-4xl text-center my-8">{id !== undefined ? "Editar Post" : "Serviços"}</h1>
 
-      <form className="flex flex-col w-1/2 gap-4" onSubmit={gerarNovaServico}>
-        <div className="flex flex-col gap-2 ">
-          <label htmlFor="nome">Nome</label>
-          <input type="text" placeholder="Nome" name="nome" required className="border-2 border-slate-700 rounded p-2 text-black" value={servico.nome} onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)} />
-        </div>
-        <div className="flex flex-col gap-2 ">
-          <label htmlFor="foto">Foto</label>
-          <input type="text" placeholder="Foto" name="foto" required className="border-2 border-slate-700 rounded p-2 text-black" value={servico.foto} onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)} />
-        </div>
-        <div className="flex flex-col gap-2">
-          <label htmlFor="duracao">Duração</label>
-          <input type="text" placeholder="Text" name="duracao" required className="border-2 border-slate-700 rounded p-2 text-black" value={servico.duracao} onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)} />
-        </div>
-        <div className="flex flex-col gap-2">
-          <label htmlFor="vagas">Vagas</label>
-          <input type="number" placeholder="Vagas" name="vagas" required className="border-2 border-slate-700 rounded p-2 text-black" value={servico.vagas} onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)} />
-        </div>
-        <div className="flex flex-col gap-2">
-          <label htmlFor="gratuito">Gratuito</label>
-          <input type="checkbox" placeholder="Gratuito" name="gratuidade" className="border-2 border-slate-700 rounded p-2 text-black" checked={servico.gratuidade} onChange={atualizarEstado} />
-        </div>
-        <div className="flex flex-col gap-2">
-          <label htmlFor="preco">Preço</label>
-          <input type="number" placeholder="Preço" name="preco" required className="border-2 border-slate-700 rounded p-2 text-black" value={servico.preco} onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)} />
-        </div>
-        <div className="flex flex-col gap-2">
-          <p>Categoria</p>
-          <select name="categoria" id="categoria" className="border p-2 border-slate-800 rounded text-black" onChange={(e) => buscarCategoriaPorId(e.currentTarget.value)}>
-            <option value="" selected disabled>
-              Seleciona a Categoria
-            </option>
+        <form className="flex flex-col md:w-1/2 gap-4" onSubmit={gerarNovaServico}>
 
-            {categorias.map((categoria) => (
-              <>
-                <option value={categoria.id}>{categoria.tipoServico}</option>
-              </>
-            ))}
-          </select>
-        </div>
-        <button
-          type="submit"
-          className="rounded disabled:bg-slate-200
+          <div className="flex flex-col gap-2 ">
+            <label htmlFor="nome" className="text-[18px] font-medium">Nome</label>
+            <input type="text" placeholder="Nome" name="nome" required className="border-2 border-magenta-/-fuchsia-900 rounded p-2 text-black" value={servico.nome} onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)} />
+          </div>
+
+          <div className="flex flex-col gap-2 ">
+            <label htmlFor="foto" className="text-[18px] font-medium">Foto</label>
+            <input type="text" placeholder="Foto" name="foto" required className="border-2 border-magenta-/-fuchsia-900 rounded p-2 text-black" value={servico.foto} onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)} />
+          </div>
+
+          <div className="flex flex-col gap-2">
+            <label htmlFor="duracao" className="text-[18px] font-medium">Duração</label>
+            <input type="text" placeholder="ex: 1 semana" name="duracao" required className="border-2 border-magenta-/-fuchsia-900 rounded p-2 text-black" value={servico.duracao} onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)} />
+          </div>
+
+          <div className="flex flex-col gap-2">
+            <label htmlFor="vagas" className="text-[18px] font-medium">Vagas</label>
+            <input type="number" placeholder="Vagas" name="vagas" required className="border-2 border-magenta-/-fuchsia-900 rounded p-2 text-black" value={servico.vagas} onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)} />
+          </div>
+
+          <div className="flex justify-between py-2">
+            <label htmlFor="gratuito" className="text-[18px] font-medium">Gratuito?</label>
+            <div className="flex justify-between items-center gap-2">
+              <input type="checkbox" placeholder="Gratuito" name="gratuidade" className="   text-black" checked={servico.gratuidade} onChange={atualizarEstado} />
+              <p className="text-[18px] font-medium">Sim</p>
+            </div>
+          </div>
+
+          <div className="flex flex-col gap-2">
+            <label htmlFor="preco" className="text-[18px] font-medium">Preço</label>
+            <input type="number" placeholder="Preço" name="preco" required className="border-2 border-magenta-/-fuchsia-900 rounded p-2 text-black" value={servico.preco} onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)} />
+          </div>
+
+          <div className="flex flex-col gap-2">
+            <p className="text-[18px] font-medium">Categoria</p>
+            <select name="categoria" id="categoria" className="border-2 border-magenta-/-fuchsia-900 rounded p-2" onChange={(e) => buscarCategoriaPorId(e.currentTarget.value)}>
+              <option value="" selected disabled>
+                Seleciona a Categoria
+              </option>
+
+              {categorias.map((categoria) => (
+                <>
+                  <option value={categoria.id}>{categoria.tipoServico}</option>
+                </>
+              ))}
+            </select>
+          </div>
+          <button
+            type="submit"
+            className="rounded disabled:bg-slate-200
                           hover:bg-teal-100 hover: text-fuchsia-800 font-bold w-1/2 
                           mx-auto m-4 py-2 flex justify-center
                           "
-                     
 
-          disabled={carregandoCategoria || isLoading}
-        >
-          {isLoading ? <RotatingLines strokeColor="white" strokeWidth="5" animationDuration="0.75" width="24" visible={true} /> : <span>{id !== undefined ? "Atualizar" : "Cadastre o Serviço"}</span>}
-        </button>
-      </form>
+
+            disabled={carregandoCategoria || isLoading}
+          >
+            {isLoading ? <RotatingLines strokeColor="white" strokeWidth="5" animationDuration="0.75" width="24" visible={true} /> : <span>{id !== undefined ? "Atualizar" : "Cadastre o Serviço"}</span>}
+          </button>
+        </form>
+      </div>
     </div>
   );
 }

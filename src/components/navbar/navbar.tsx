@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthContext";
-import { SignOut, User } from "@phosphor-icons/react";
+import { List, SignOut, User } from "@phosphor-icons/react";
 import { ToastAlerta } from "../../utils/ToastAlerta";
 
 function Navbar() {
@@ -14,48 +14,55 @@ function Navbar() {
     navigate("/login");
   }
 
+
   return (
     <>
-      <div className=" bg-teal-600 text-white flex justify-center font-semibold items-center">
-        <div className="container flex items-center justify-between text-lg">
+      <nav className="flex justify-between items-center w-[92%] mx-auto p-4">
+        <div className="">
+          <Link to="/home" className="">
+            <span className="text-4xl text-magenta-/-fuchsia-950 font-[Open Sans] font-semibold">NÍSIA</span>
+            {/* <img className="h-[350px]" src="https://ik.imagekit.io/rx2wvtnsm/Nisa%20Floresta%20Branco?updatedAt=1717598564578" alt="LOGO DO PROJETO" /> */}
+          </Link>
+        </div>
 
-          <div className="">
-          <Link to="/home" className="h-24 flex items-center">
-            <img className="h-[350px]" src="https://ik.imagekit.io/rx2wvtnsm/Nisa%20Floresta%20Branco?updatedAt=1717598564578" alt="LOGO DO PROJETO" />     {/* Colocar imagem do logo */}
-            </Link>
-          </div>
+        <div className="md:static absolute bg-white md:min-h-fit min-h-[60vh] left-0 top-[-100%] md:w-auto w-full flex items-center px-5">
+          <ul className="flex md:flex-row flex-col md:items-center md:gap-[4vw] gap-8">
+            {usuario.tipo === "adm" && (
+              <>
+                <li><Link to="/cadastroServico" className="hover:text-gray-500 font-medium">Cadastrar Serviço</Link></li>
+                <li><Link to="/cadastroCategoria" className="hover:text-gray-500 font-medium">Cadastrar Categoria</Link></li>
+              </>
+            )}
+            <li>
+              <Link to="/servicos" className="hover:text-gray-500 font-medium">Serviços</Link>
+            </li>
+            <li>
+              <Link to="/categorias" className="hover:text-gray-500 font-medium">Categorias</Link>
+            </li>
+            <li>
+              <Link to="/sobre" className="hover:text-gray-500 font-medium">Sobre nós</Link>
+            </li>
+          </ul>
+        </div>
 
-          <div className="flex items-center justify-center gap-4">
-            {usuario.tipo === "adm" ?
-              <Link to="/cadastroServico" className="hover:underline">
-                Cadastrar Serviço
-              </Link> : <div></div>
-            }
-
-            {usuario.tipo === "adm" ?
-              <Link to="/cadastroCategoria" className="hover:underline">
-                Cadastrar Categoria
-              </Link> : <div></div>
-            }
-
-            <Link to="/servicos" className="hover:underline">Serviços </Link>
-
-            <Link to="/categorias" className="hover:underline">Categorias </Link>
-
-            <Link to="/sobre" className="hover:underline">Sobre nós</Link>
-
-            <Link to="/login" className="hover:underline">
-              Login
-            </Link>
-
-            <Link to="/perfil" className='rounded px-2 py-1 bg-fuchsia-900 hover:bg-teal-100 font-bold hover:text-fuchsia-800 hover:duration-500' ><User size={30} weight="regular" /></Link>
-
-            <Link to="/login" onClick={logout} className='rounded px-2 py-1 bg-fuchsia-900 hover:bg-teal-100 font-bold hover:text-fuchsia-800 hover:duration-500'>
-              <SignOut size={30} weight="regular" />
-            </ Link>
-          </div>
-        </div >
-      </div>
+        <div className="flex items-center justify-between">
+          {usuario.token !== "" ? (
+            <div id="botao-nav-login" className="flex items-center gap-3">
+              <Link to="/perfil" className='border rounded-xl border-slate-300 p-1 hover:shadow-md hover:bg-bright-turquoise-100 hover:border-magenta-/-fuchsia-200'><User size={30} weight="regular" /></Link>
+              <Link to="/login" onClick={logout} className='border rounded-xl border-slate-300 p-1 hover:shadow-md hover:bg-bright-turquoise-100 hover:border-magenta-/-fuchsia-2'><SignOut size={30} weight="regular" /></Link>
+              {/* acrescentar icone carrinho de compras */}
+            </div>
+          ) : (
+            <div>
+              <button className="bg-magenta-/-fuchsia-900 text-white hover:bg-bright-turquoise-200 text-xl hover:text-magenta-/-fuchsia-900 hover:duration-500 px-5 py-2 rounded-full font-medium">
+                <Link to="/login">Login</Link>
+                </button>
+                
+            </div>
+          )}
+        </div>
+        {/* <List size={30} weight="regular" className="cursor-pointer md:hidden"/> */}
+      </nav>
     </>
   );
 }

@@ -10,33 +10,33 @@ function Contato() {
     return (
 
         <>
-            <div className="bg-teal-500 flex h-screen items-center justify-center font-bold">
+            <div className=" flex h-screen items-center justify-center font-bold">
                 { }
 
-                <div className="bg-white rounded-xl border-4 border-fuchsia-900 w-1/3">
+                <div className="bg-white rounded-xl w-2/3 shadow-2xl py-10">
                     <form className="flex justify-center items-center flex-col gap-4 py-4 px-10">
-                        <h2 className="text-black text-5xl pb-6 pt-3">Contate-nos</h2>
-                        <p>Mande suas sugestões e ideias.</p>
+                        <h2 className="text-black text-4xl pb-6 pt-3 text-center">Quer saber mais sobre nossos produtos ou tem alguma sugestão?</h2>
+                        <p className="text-2xl">Mande uma mensagem:</p>
 
                         <div className="flex flex-col w-2/3">
-                            <label htmlFor="usuario"> Nome </label>
-                            <input type="text" id="nome" name="nome" placeholder="Digite seu nome" className="border-2 border-fuchsia-900 700 rounded p-2" />
+                            <label htmlFor="usuario">Nome*</label>
+                            <input type="text" id="nome" name="nome" placeholder="Digite seu nome" className="border-2 border-fuchsia-900 rounded p-2" required/>
                         </div>
 
 
                         <div className="flex flex-col w-2/3">
-                            <label htmlFor="usuario"> Email </label>
-                            <input type="text" id="usuario" name="usuario" placeholder="exemplo@email.com" className="border-2 border-fuchsia-900 700 rounded p-2" />
+                            <label htmlFor="usuario">Email*</label>
+                            <input type="text" id="usuario" name="usuario" placeholder="exemplo@email.com" className="border-2 border-fuchsia-900 rounded p-2" required/>
                         </div>
 
                         <div className="flex flex-col w-2/3">
-                            <label htmlFor="usuario"> Assuntos </label>
-                            <input type="text" id="assunto" name="assunto" placeholder="Digite o assunto" className="border-2 border-fuchsia-900 700 rounded p-2" />
+                            <label htmlFor="usuario">Assunto*</label>
+                            <input type="text" id="assunto" name="assunto" placeholder="Digite o assunto" className="border-2 border-fuchsia-900 rounded p-2" required/>
                         </div>
 
                         <div className="flex flex-col w-2/3">
-                            <label htmlFor="senha"> Mensagem </label>
-                            <textarea name="message" id="message" placeholder="Digite sua mensagem" className="border-2 border-fuchsia-900 700 rounded p-2"></textarea>
+                            <label htmlFor="senha">Mensagem*</label>
+                            <textarea name="message" id="message" placeholder="Digite sua mensagem" className="border-2 border-fuchsia-900 rounded p-2" required></textarea>
                             {/* <input type="text" id="mensagem" name="mensagem" placeholder="Digite sua mensagem" className="border-2 border-fuchsia-900 700 rounded p-2" /> */}
                         </div>
 

@@ -90,27 +90,47 @@ function FormCategoria() {
   }
 
   return (
-    <div className="container flex flex-col items-center justify-center mx-auto">
-      <h1 className="text-4xl text-center my-8">{id === undefined ? "Cadastrar Categoria" : "Editar Categoria"}</h1>
+    <div className="bg-gradient-to-b from-bright-turquoise-200 to-magenta-/-fuchsia-200 min-h-screen">
+      <div className="container flex flex-col items-center justify-center mx-auto min-h-screen md:w-[56%] bg-white pb-[100px] border-2 rounded-xl">
+        <h1 className="text-4xl text-center my-8">
+          {id === undefined ? "Cadastrar Categoria" : "Editar Categoria"}
+        </h1>
 
-      <form className="w-1/2 flex flex-col gap-4" onSubmit={gerarNovaCategoria}>
-        <div className="flex flex-col gap-2">
-          <label htmlFor="tipoServico">Tipo de serviço da categoria</label>
-          <input type="text" placeholder="Descreva a categoria" name="tipoServico" className="border-2 border-slate-700 rounded p-2" value={categoria.tipoServico} onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)} />
-        </div>
+        <form className="flex flex-col md:w-1/2 gap-4" onSubmit={gerarNovaCategoria}>
+          <div className="flex flex-col gap-2">
+            <label htmlFor="tipoServico" className="text-[18px] font-medium">Tipo de serviço da categoria</label>
+            <input
+              type="text"
+              placeholder="Nome categoria"
+              name="tipoServico"
+              className="border-2 border-magenta-/-fuchsia-900 rounded p-2"
+              value={categoria.tipoServico}
+              onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+            />
+          </div>
 
-        <div className="flex flex-col gap-2">
-          <label htmlFor="descricao">Descrição</label>
-          <input type="text" placeholder="Adicione uma imagem" name="descricao" className="border-2 border-slate-700 rounded p-2" value={categoria.descricao} onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)} />
-        </div>
-        <button
-          className="flex items-center justify-center font-bold rounded px-4 py-2 bg-fuchsia-900 hover:bg-teal-100 text-xl hover:text-fuchsia-800 hover:duration-500 text-white"
-          type="submit"
-        >
-          {isLoading ? <RotatingLines strokeColor="black" strokeWidth="5" animationDuration="0.75" width="24" visible={true} /> : <span>{id === undefined ? "Cadastrar" : "Atualizar"}</span>}
-        </button>
-      </form>
+          <div className="flex flex-col gap-2">
+            <label htmlFor="descricao" className="text-[18px] font-medium">Descrição</label>
+            <input
+              type="text"
+              placeholder="Descreva a categoria"
+              name="descricao"
+              className="border-2 border-magenta-/-fuchsia-900 rounded p-2"
+              value={categoria.descricao}
+              onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+            />
+          </div>
+
+          <button
+            className="flex items-center justify-center font-bold rounded px-4 py-2 bg-fuchsia-900 hover:bg-teal-100 text-xl hover:text-fuchsia-800 hover:duration-500 text-white"
+            type="submit"
+          >
+            {isLoading ? <RotatingLines strokeColor="black" strokeWidth="5" animationDuration="0.75" width="24" visible={true} /> : <span>{id === undefined ? "Cadastrar" : "Atualizar"}</span>}
+          </button>
+        </form>
+      </div>
     </div>
+
   );
 }
 
