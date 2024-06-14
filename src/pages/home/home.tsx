@@ -8,15 +8,9 @@ function Home() {
 
         <div className="container grid grid-cols-2 ">
 
-<<<<<<< HEAD
-          <div className="flex flex-col text-5xl font-bold py-5 justify-around m-10">
-            <h1 className="text-black relative w-fit text-balance font-bold !leading-tight ">Centro de Desenvolvimento {' '}
-              <span className="bg-bright-turquoise-600 text-white hover:bg-brigt-400 font-bold hover:text-white">Nísia Floresta</span>{' '}</h1>
-=======
           <div className="flex flex-col text-5xl font-bold py-10 pl-16 justify-around mr-[69px]">
             <h1 className="text-black relative w-fit text-balance font-bold !leading-tight">Centro de Desenvolvimento {' '}
               <span className="bg-fuchsia-800 text-white font-bold ">Nísia Floresta</span>{' '}</h1>
->>>>>>> fcf2208d18f1cd28bdafdd2403f9b20f6742e7a2
           </div>
 
           <div className="flex items-center py-10 pl-18 justify-around m-10 text-xl ">

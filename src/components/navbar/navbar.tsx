@@ -21,14 +21,9 @@ function Navbar() {
 
           <div className="">
           <Link to="/home" className="h-24 flex items-center">
-<<<<<<< HEAD
-            <img className=" h-[350px]" src="https://ik.imagekit.io/rx2wvtnsm/Nisa%20Floresta%20Branco?updatedAt=1717598564578" alt="LOGO DO PROJETO" />     {/* Colocar imagem do logo */}
-          </Link>
-=======
             <img className="h-[350px]" src="https://ik.imagekit.io/rx2wvtnsm/Nisa%20Floresta%20Branco?updatedAt=1717598564578" alt="LOGO DO PROJETO" />     {/* Colocar imagem do logo */}
             </Link>
           </div>
->>>>>>> fcf2208d18f1cd28bdafdd2403f9b20f6742e7a2
 
           <div className="flex items-center justify-center gap-4">
             {usuario.tipo === "adm" ?
