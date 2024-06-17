@@ -7,12 +7,12 @@ import { buscar, atualizar, cadastrar } from "../../../services/Service";
 import { ToastAlerta } from "../../../utils/ToastAlerta";
 import Categoria from "../../../models/Categoria";
 
-function FormServicos() {
+export default function FormServico() {
   const navigate = useNavigate();
-
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [categorias, setCategorias] = useState<Categoria[]>([]);
   const [categoria, setCategoria] = useState<Categoria>({ id: 0, tipoServico: "", descricao: "", servico: null });
+  const { id } = useParams<{ id: string }>();
   const [servico, setServico] = useState<Servico>({
     id: 0,
     nome: "",
@@ -25,17 +25,13 @@ function FormServicos() {
     usuario: null,
   });
 
-  const { id } = useParams<{ id: string }>();
-
   const { usuario, handleLogout } = useContext(AuthContext);
   const token = usuario.token;
 
   async function buscarServicoPorId(id: string) {
     try {
       await buscar(`/servicos/${id}`, setServico, {
-        headers: {
-          Authorization: token,
-        },
+        headers: {Authorization: token},
       });
     } catch (error: any) {
       if (error.toString().includes("401")) {
@@ -47,9 +43,7 @@ function FormServicos() {
   async function buscarCategoriaPorId(id: string) {
     try {
       await buscar(`/categorias/${id}`, setCategoria, {
-        headers: {
-          Authorization: token,
-        },
+        headers: {Authorization: token},
       });
     } catch (error: any) {
       if (error.toString().includes("401")) {
@@ -73,13 +67,12 @@ function FormServicos() {
   useEffect(() => {
     if (token === "") {
       ToastAlerta("Você precisa estar logado", "info");
-      navigate("/");
+      navigate("/login");
     }
   }, [token]);
 
   useEffect(() => {
     buscarCategorias();
-
     if (id !== undefined) {
       buscarServicoPorId(id);
     }
@@ -111,14 +104,10 @@ function FormServicos() {
     if (id != undefined) {
       try {
         await atualizar(`/servicos`, servico, setServico, {
-          headers: {
-            Authorization: token,
-          },
+          headers: {Authorization: token},
         });
-
-        ToastAlerta("O serviço foi cadastrado com sucesso!", "successo");
+        ToastAlerta("O serviço foi atualizado com sucesso!", "successo");
       } catch (error: any) {
-        console.log(error);
         if (error.toString().includes("401")) {
           handleLogout();
         } else {
@@ -128,11 +117,8 @@ function FormServicos() {
     } else {
       try {
         await cadastrar(`/servicos`, servico, setServico, {
-          headers: {
-            Authorization: token,
-          },
+          headers: {Authorization: token},
         });
-
         ToastAlerta("O serviço foi cadastrado com sucesso", "successo");
       } catch (error: any) {
         if (error.toString().includes("401")) {
@@ -142,71 +128,67 @@ function FormServicos() {
         }
       }
     }
-
     setIsLoading(false);
     retornar();
   }
-
   const carregandoCategoria = categoria.tipoServico === "";
 
   return (
-    <div className="container flex flex-col mx-auto items-center text-black">
-      <h1 className="text-4xl text-center my-8">{id !== undefined ? "Editar Post" : "Servicos"}</h1>
+    <>
+      <div className="container w-full m-4 p-6 mt-5 flex flex-col items-center">
+        <h1 className="text-4xl font-semibold p-2">{id !== undefined ? "Editar Serviço" : "Cadastrar Serviço"}</h1>
 
-      <form className="flex flex-col w-1/2 gap-4" onSubmit={gerarNovaServico}>
-        <div className="flex flex-col gap-2 ">
+        <form className="flex w-full max-w-2xl flex-col p-4" onSubmit={gerarNovaServico}>
           <label htmlFor="nome">Nome</label>
-          <input type="text" placeholder="Nome" name="nome" required className="border-2 border-slate-700 rounded p-2 text-black" value={servico.nome} onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)} />
-        </div>
-        <div className="flex flex-col gap-2 ">
-          <label htmlFor="foto">Foto</label>
-          <input type="text" placeholder="Foto" name="foto" required className="border-2 border-slate-700 rounded p-2 text-black" value={servico.foto} onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)} />
-        </div>
-        <div className="flex flex-col gap-2">
-          <label htmlFor="duracao">Duração</label>
-          <input type="text" placeholder="Text" name="duracao" required className="border-2 border-slate-700 rounded p-2 text-black" value={servico.duracao} onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)} />
-        </div>
-        <div className="flex flex-col gap-2">
-          <label htmlFor="vagas">Vagas</label>
-          <input type="number" placeholder="Vagas" name="vagas" required className="border-2 border-slate-700 rounded p-2 text-black" value={servico.vagas} onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)} />
-        </div>
-        <div className="flex flex-col gap-2">
-          <label htmlFor="gratuito">Gratuito</label>
-          <input type="checkbox" placeholder="Gratuito" name="gratuidade" className="border-2 border-slate-700 rounded p-2 text-black" checked={servico.gratuidade} onChange={atualizarEstado} />
-        </div>
-        <div className="flex flex-col gap-2">
-          <label htmlFor="preco">Preço</label>
-          <input type="number" placeholder="Preço" name="preco" required className="border-2 border-slate-700 rounded p-2 text-black" value={servico.preco} onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)} />
-        </div>
-        <div className="flex flex-col gap-2">
-          <p>Categoria</p>
-          <select name="categoria" id="categoria" className="border p-2 border-slate-800 rounded text-black" onChange={(e) => buscarCategoriaPorId(e.currentTarget.value)}>
-            <option value="" selected disabled>
-              Seleciona a Categoria
-            </option>
+          <input type="text" name="nome" placeholder="Nome do produto" className="p-2 border border-gray-300 rounded-md"
+            value={servico.nome} onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+          />
 
-            {categorias.map((categoria) => (
-              <>
-                <option value={categoria.id}>{categoria.tipoServico}</option>
-              </>
-            ))}
+          <label htmlFor="foto" className="mt-2">Foto</label>
+          <input type="url" name="foto" placeholder="URL da foto" className="p-2 border border-gray-300 rounded-md"
+            value={servico.foto} onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+          />
+
+          <label htmlFor="vagas" className="mt-2">Vagas</label>
+          <input type="number" name="vagas" placeholder="Quantidade de vagas disponíveis" className="p-2 border border-gray-300 rounded-md" 
+            value={servico.vagas} onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+          />
+
+          <label htmlFor="duracao" className="mt-2">Duração</label>
+          <input type="text" name="duracao" placeholder="Tempo investido" className="p-2 border border-gray-300 rounded-md"
+            value={servico.duracao} onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+          />
+
+          <div className="mt-2">
+            <label htmlFor="gratuidade">Gratuito?</label>
+            <input type="checkbox" name="gratuidade" className="ml-4" checked={servico.gratuidade} onChange={atualizarEstado} /> Sim
+          </div>
+
+          <label htmlFor="preco" className="mt-2">Valor</label>
+          <input type="number" name="preco" placeholder="Valor investido" className="p-2 border border-gray-300 rounded-md" value={servico.preco} onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)} />
+
+          <label htmlFor="categoria" className="mt-2">Categoria</label>
+          <select name="categoria" className="p-2 border border-gray-300 rounded-md"
+          onChange={(e) => buscarCategoriaPorId(e.currentTarget.value)}>
+            <option value="" selected disabled>Selecione uma Categoria</option>
+              {categorias.map((categoria) => (
+                <>
+                  <option value={categoria.id}>{categoria.tipoServico}</option>
+                </>
+              ))}
           </select>
-        </div>
-        <button
-          type="submit"
-          className="rounded disabled:bg-slate-200
-                          hover:bg-teal-100 hover: text-fuchsia-800 font-bold w-1/2 
-                          mx-auto m-4 py-2 flex justify-center
-                          "
-                     
-
-          disabled={carregandoCategoria || isLoading}
-        >
-          {isLoading ? <RotatingLines strokeColor="white" strokeWidth="5" animationDuration="0.75" width="24" visible={true} /> : <span>{id !== undefined ? "Atualizar" : "Cadastre o Serviço"}</span>}
-        </button>
-      </form>
-    </div>
-  );
+          
+          <div className="flex flex-col">
+            <div className="flex">
+            <button className="flex justify-center rounded-lg py-2 mt-5 bg-red-400 hover:bg-red-600 w-full hover:text-white" onClick={retornar}>Não</button>
+            
+            <button type="submit" className="flex justify-center rounded-lg py-2 mt-5 bg-bright-turquoise-500 hover:bg-bright-turquoise-600 w-full hover:text-white" disabled={carregandoCategoria || isLoading}>
+              {isLoading ? <RotatingLines strokeColor="white" strokeWidth="5" animationDuration="0.75" width="24" visible={true} /> : <span>{id !== undefined ? "Atualizar" : "Cadastre um Serviço"}</span>}
+            </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </>
+  )
 }
-
-export default FormServicos;

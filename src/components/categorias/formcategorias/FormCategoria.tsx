@@ -6,16 +6,14 @@ import Categoria from "../../../models/Categoria";
 import { buscar, atualizar, cadastrar } from "../../../services/Service";
 import { ToastAlerta } from "../../../utils/ToastAlerta";
 
-function FormCategoria() {
+export default function FormCategoria() {
   const navigate = useNavigate();
-
   const [categoria, setCategoria] = useState<Categoria>({} as Categoria);
   const [isLoading, setIsLoading] = useState<boolean>(false);
+  const { id } = useParams<{ id: string }>();
 
   const { usuario, handleLogout } = useContext(AuthContext);
   const token = usuario.token;
-
-  const { id } = useParams<{ id: string }>();
 
   async function buscarPorId(id: string) {
     try {
@@ -84,35 +82,39 @@ function FormCategoria() {
         }
       }
     }
-
     setIsLoading(false);
     retornar();
   }
 
   return (
-    <div className="container flex flex-col items-center justify-center mx-auto">
-      <h1 className="text-4xl text-center my-8">{id === undefined ? "Cadastrar Categoria" : "Editar Categoria"}</h1>
+    <>
+      <div className="container w-full m-4 p-6 mt-5 flex flex-col items-center">
+        <h1 className="text-4xl font-semibold p-2">
+          {id === undefined ? "Cadastrar Categoria" : "Editar Categoria"}
+        </h1>
 
-      <form className="w-1/2 flex flex-col gap-4" onSubmit={gerarNovaCategoria}>
-        <div className="flex flex-col gap-2">
-          <label htmlFor="tipoServico">Tipo de serviço da categoria</label>
-          <input type="text" placeholder="Descreva a categoria" name="tipoServico" className="border-2 border-slate-700 rounded p-2" value={categoria.tipoServico} onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)} />
-        </div>
-
-        <div className="flex flex-col gap-2">
+        <form className="flex w-full max-w-2xl flex-col p-4" onSubmit={gerarNovaCategoria}>
+          <label htmlFor="tipoServico">Nome</label>
+          <input type="text" name="tipoServico" placeholder="Nome da categoria" className="p-2 border border-gray-300 rounded-md"
+            value={categoria.tipoServico} onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+          />
+          
           <label htmlFor="descricao">Descrição</label>
-          <input type="text" placeholder="Adicione uma imagem" name="descricao" className="border-2 border-slate-700 rounded p-2" value={categoria.descricao} onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)} />
-        </div>
+          <input type="text" name="descricao" placeholder="Descreva a categoria" className="p-2 border border-gray-300 rounded-md"
+            value={categoria.descricao} onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+          />
 
-        <button
-          className="flex items-center justify-center font-bold rounded px-4 py-2 bg-fuchsia-900 hover:bg-teal-100 text-xl hover:text-fuchsia-800 hover:duration-500 text-white"
-          type="submit"
-        >
-          {isLoading ? <RotatingLines strokeColor="black" strokeWidth="5" animationDuration="0.75" width="24" visible={true} /> : <span>{id === undefined ? "Cadastrar" : "Atualizar"}</span>}
-        </button>
-      </form>
-    </div>
-  );
+          <div className="flex flex-col">
+            <div className="flex">
+              <button className="flex justify-center rounded-lg py-2 mt-5 bg-red-400 hover:bg-red-600 w-full hover:text-white" onClick={retornar}>Não</button>
+              
+              <button type="submit" className="flex justify-center rounded-lg py-2 mt-5 bg-bright-turquoise-500 hover:bg-bright-turquoise-600 w-full hover:text-white">
+                {isLoading ? <RotatingLines strokeColor="black" strokeWidth="5" animationDuration="0.75" width="24" visible={true} /> : <span>{id === undefined ? "Cadastrar" : "Atualizar"}</span>}
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </>
+  )
 }
-
-export default FormCategoria;

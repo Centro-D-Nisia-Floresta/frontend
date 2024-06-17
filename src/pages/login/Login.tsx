@@ -6,9 +6,7 @@ import { RotatingLines } from "react-loader-spinner";
 
 function Login() {
   const navigate = useNavigate();
-
   const { usuario, handleLogin, isLoading } = useContext(AuthContext);
-
   const [usuarioLogin, setUsuarioLogin] = useState<UsuarioLogin>({} as UsuarioLogin);
 
   useEffect(() => {
@@ -33,42 +31,31 @@ function Login() {
 
   return (
     <>
-      
-      <div className="bg-teal-500 flex h-screen items-center justify-center font-bold">
-        {}
+      <div className="container w-full m-4 p-6 mt-5 flex flex-col items-center">
+        <div className="mb-4 flex flex-col gap-1">
+          <h2 className="text-3xl font-medium p-2">Entre na sua Conta</h2>
+          <p className="text-sm text-gray-500 sm:text-base">Por favor, coloque seu email e senha</p>
+        </div>
 
-      <div className="bg-white rounded-xl border-4 border-fuchsia-900 w-1/3">
-        <form className="flex justify-center items-center flex-col gap-4 py-4 px-10" onSubmit={login}>
-            <h2 className="text-black text-5xl pb-6 pt-3">Entrar</h2>
+        <form className="mb-5 max-w-[420px] flex flex-col justify-center gap-5 p-4" onSubmit={login}>
+          <label htmlFor="usuario">Email</label>
+          <input type="text" name="usuario" placeholder="email@email.com" className="p-2 border border-gray-300 rounded-md w-80"
+            value={usuarioLogin.usuario} onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+          />
 
-          <div className="flex flex-col w-2/3">
-            <label htmlFor="usuario"> Email </label>
-            <input type="text" id="usuario" name="usuario" placeholder="exemplo@email.com" className="border-2 border-fuchsia-900 700 rounded p-2" value={usuarioLogin.usuario} onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)} />
-          </div>
+          <label htmlFor="senha">Senha</label>
+          <input type="password" name="senha" placeholder="********" className="p-2 border border-gray-300 rounded-md w-80"
+            value={usuarioLogin.senha} onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+          />
 
-          <div className="flex flex-col w-2/3">
-            <label htmlFor="senha"> Senha </label>
-            <input type="password" id="senha" name="senha" placeholder="Senha" className="border-2 border-fuchsia-900 700 rounded p-2" value={usuarioLogin.senha} onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)} />
-          </div>
-
-          <button type="submit" className="flex items-center justify-center rounded bg-fuchsia-900 hover:bg-teal-100 hover:text-fuchsia-800 font-bold text-white w-1/3 py-2">
-            {" "}
-            {}
+          <button type="submit" className="flex justify-center rounded-lg py-2 bg-bright-turquoise-500 hover:bg-bright-turquoise-600 w-full hover:text-white">
             {isLoading ? <RotatingLines strokeColor="white" strokeWidth="5" animationDuration="0.75" width="24" visible={true}  /> : <span>Entrar</span>}
           </button>
-
-          <hr className="border-slate-800 w-3/4 mt-6"/>
-
         </form>
-          <p className="flex items-center justify-center p-6">
-            Ainda não tem uma conta?{" "}
-            <Link to="/cadastro" className="text-indigo-800 hvoer:underline pl-2">
-              Cadastre-se
-            </Link>
-          </p>
-        </div>
-        
-          <div className="fundoLogin hidden lg:block"></div>
+
+        <p className="text-sm">Aluno novo?
+          <Link to="/cadastro" className="font-medium hover:underline text-fuchsia-700"> Cadastre-se aqui!</Link>
+        </p>
       </div>
     </>
   );

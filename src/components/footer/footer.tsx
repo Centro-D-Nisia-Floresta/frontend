@@ -1,34 +1,30 @@
-import { Envelope, GithubLogo} from "@phosphor-icons/react"
+import { GithubLogo, UsersThree } from "@phosphor-icons/react"
 import { Link } from "react-router-dom"
 
-function Footer() {
+export default function Footer() {
     return (
         <>
-            
-            <div className="flex flex-col justify-center bg-teal-600 text-white items-center py-1 px-4">
-                <div className="container flex justify-around items-center py-4">
-                    <p className="text-xl font-bold">Centro D. Nisia Floresta</p>
-                    
-                    <div className="flex flex-col items-center justify-center">
-                        <Link to="/contato" className="hover:underline text-white font-semibold">
-                        Fale conosco
-                        </Link>
-                        <hr className="border-white w-3/4 justify-center mt-3"/>   
-                        <p className="pt-3">© 2024 CDNF | Todos os direitos reservados.</p>
-                    </div>
+            <div className="w-full p-2 flex justify-around bg-gradient-to-r from-fuchsia-400 to-bright-turquoise-300">
+                <div className="flex justify-start flex-col p-2">
+                    <Link to="/home">
+                        <span id="logo" className="uppercase font-semibold">Nísia Floresta</span>
+                    </Link>
+                    <p className="text-md italic">Acreditamos que a educação transforma vidas!</p>
+                    <p className="text-sm">2024 | Projeto Integrador - ODS 5</p>
+                </div>
 
-                    <div className="flex items-center justify-center gap-2 text-x font-semibold">
-
-                        <a target="_blank" href="https://github.com/Centro-D-Nisia-Floresta"><GithubLogo size={36} weight="regular" />
+                <div className="p-2">
+                    <p>Nos siga para acompanhar as novidades:</p>
+                    <div className="flex gap-3 justify-center">
+                        <a href="https://github.com/Centro-D-Nisia-Floresta" target="_blank" className="hover:text-fuchsia-500">
+                            <GithubLogo size={30} weight="light" />
                         </a>
-                        <a target="_blank" href="cdnisiafloresta@gmail.com"><Envelope size={36} weight="regular" />
+                        <a href="#" target="_blanck" className="hover:text-fuchsia-500">
+                            <UsersThree size={30} weight="light" />
                         </a>
-                        
                     </div>
                 </div>
             </div>
-            
         </>
     )
 }
-export default Footer
