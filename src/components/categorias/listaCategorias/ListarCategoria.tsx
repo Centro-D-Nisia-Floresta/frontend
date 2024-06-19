@@ -21,18 +21,18 @@ export default function ListarCategorias() {
       });
     } catch (error: any) {
       if (error.toString().includes("401")) {
-        // ToastAlerta("O token expirou, favor logar novamente!", "info")
+        ToastAlerta("O token expirou, favor logar novamente!", "info")
         handleLogout();
       }
     }
   }
 
-  // useEffect(() => {
-  //   if (token === "") {
-  //     ToastAlerta("Acesso restrito. Por favor, faça login!", "info");
-  //     navigate("/login");
-  //   }
-  // }, [token]);
+  useEffect(() => {
+    if (token === "") {
+      ToastAlerta("Acesso restrito. Por favor, faça login!", "info");
+      navigate("/login");
+    }
+  }, [token]);
 
   useEffect(() => {
     buscarCategorias();
@@ -56,16 +56,10 @@ export default function ListarCategorias() {
           <h2 className="text-3xl font-medium">Categorias</h2>
           <p className="text-lg italic mb-10">Explore nossas categorias e encontre o caminho certo para alcançar seus objetivos!</p>
 
-          <div className="min-h-[70vh]">
-            {categorias.length === 0 && (
-              <div className="flex flex-col items-center">
-                <h1 className="text-3xl font-medium p-2 mt-7">Nenhuma categoria foi encontrada!</h1>
-              </div>
-          )}
-
-          <div className="container flex justify-center gap-5">
+        <div className="flex flex-col min-h-[70vh]">
+          <div className="flex flex-wrap justify-center gap-4">
             {categorias.map((categoria) => (
-              <CardCategoria key={categoria.id} categoria={categoria} />
+                <CardCategoria key={categoria.id} categoria={categoria} />
             ))}
           </div>
         </div>

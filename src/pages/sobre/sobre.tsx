@@ -21,7 +21,7 @@ export default function Sobre() {
                     <h2 className="text-3xl font-medium mb-6 p-2">Quem Somos</h2>
 
                     <div className="flex flex-row gap-6 p-3">
-                        <div className="border border-bright-turquoise-200 hover:border-bright-turquoise-500 rounded-md w-56 p-10">
+                        <div className="border border-bright-turquoise-200 hover:border-bright-turquoise-500 rounded-md w-56 p-12">
                             <img src="https://ik.imagekit.io/rx2wvtnsm/Sobre%20n%C3%B3s/beatriz500.png?updatedAt=1717691216053" alt="Beatriz" />
                             <h3 className="text-lg font-medium mt-2">Beatriz Alves</h3>
                             <p className="text-sm">Desenvolvedora FullStack JavaScript</p>

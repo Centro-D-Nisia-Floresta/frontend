@@ -15,7 +15,6 @@ import FormCategoria from "./components/categorias/formCategorias/FormCategoria"
 import DeletarCategoria from "./components/categorias/deletarCategorias/DeletarCategoria";
 import ListarCategorias from "./components/categorias/listaCategorias/ListarCategoria";
 import Perfil from "./pages/perfil/Perfil";
-import Cart from "./components/carrinho/cart/Cart";
 
 function App() {
   return (
@@ -33,7 +32,6 @@ function App() {
               <Route path="/cadastro" element={<Cadastro />} />
               <Route path="/sobre" element={<Sobre />} />
               <Route path="/perfil" element={<Perfil />} />
-              <Route path="/carrinho" element={<Cart />} />
             
               <Route path="/servicos" element={<ListarServico />} />
               <Route path="/cadastrarservico" element={<FormServicos />} />

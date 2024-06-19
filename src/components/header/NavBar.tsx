@@ -36,7 +36,7 @@ export default function Navbar() {
           {usuario.token !== "" ? (
             <>
               <Link to="/perfil" className="hover:text-fuchsia-500"><User size={30} weight="light" /></Link>
-              <Link to="/carrinho" className="hover:text-fuchsia-500"><Basket size={30} weight="light"/></Link>
+              <Link to="" className="hover:text-fuchsia-500"><Basket size={30} weight="light"/></Link>
               <Link to="/home" className="hover:text-fuchsia-500" onClick={logout}><SignOut size={30} weight="light" /></Link>
             </>
           ) : 

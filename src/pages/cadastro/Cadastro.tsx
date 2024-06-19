@@ -67,7 +67,7 @@ function Cadastro() {
           <h2 className="text-2xl font-medium sm:text-[2rem]">Cadastre-se!</h2>
         </div>
 
-        <form className="flex flex-col justify-center gap-2 w-80" onSubmit={cadastrarNovoUsuario}>
+        <form className="flex flex-col justify-center gap-2 w-80 p-3" onSubmit={cadastrarNovoUsuario}>
           <label htmlFor="nome">Nome</label>
           <input type="text" name="nome" placeholder="Seu nome" className="p-2 border border-gray-300 rounded-md"
             value={usuario.nome} onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
