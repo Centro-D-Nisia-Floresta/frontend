@@ -1,12 +1,13 @@
 import { useContext, useEffect, useState } from "react";
 import { ColorRing } from "react-loader-spinner";
 import { useNavigate } from "react-router-dom";
-import CardCategoria from "../cardCategorias/CardCategorias";
+
 import { buscar } from "../../../services/Service";
 import Categoria from "../../../models/Categoria";
 import { AuthContext } from "../../../contexts/AuthContext";
 import ModalCategorias from "../modalCategorias/ModalCategorias";
 import { ToastAlerta } from "../../../utils/ToastAlerta";
+import CardCategorias from "../cardcategorias/CardCategorias";
 
 export default function ListarCategorias() {
   const navigate = useNavigate();
@@ -48,7 +49,10 @@ export default function ListarCategorias() {
 
           <div className="flex flex-col justify-center leading-6 ">
             <h1 className="text-4xl font-semibold p-2 mb-2">O que você vai encontrar aqui</h1>
-            <p className="text-justify">Nossa plataforma oferece uma variedade de recursos para apoiar seu desenvolvimento profissional e pessoal. Temos cursos detalhados que cobrem uma ampla gama de tópicos, desde habilidades técnicas até desenvolvimento pessoal. Nossas palestras são ministradas por especialistas da indústria, proporcionando insights valiosos e tendências atuais do mercado. Participando de nossos workshops, você terá a oportunidade de aprender de forma prática e interativa, enquanto nossas mentorias personalizadas ajudam a orientar seu crescimento profissional com conselhos e suporte individualizados.</p>
+            <p className="text-justify">
+              Nossa plataforma oferece uma variedade de recursos para apoiar seu desenvolvimento profissional e pessoal. Temos cursos detalhados que cobrem uma ampla gama de tópicos, desde habilidades técnicas até desenvolvimento pessoal. Nossas palestras são ministradas por especialistas da indústria, proporcionando insights valiosos e tendências atuais do mercado. Participando de nossos workshops, você terá a oportunidade de aprender de forma prática e interativa, enquanto nossas mentorias
+              personalizadas ajudam a orientar seu crescimento profissional com conselhos e suporte individualizados.
+            </p>
           </div>
         </div>
 
@@ -61,16 +65,16 @@ export default function ListarCategorias() {
               <div className="flex flex-col items-center">
                 <h1 className="text-3xl font-medium p-2 mt-7">Nenhuma categoria foi encontrada!</h1>
               </div>
-          )}
+            )}
 
-          <div className="container flex justify-center gap-5">
-            {categorias.map((categoria) => (
-              <CardCategoria key={categoria.id} categoria={categoria} />
-            ))}
+            <div className="container flex justify-center gap-5">
+              {categorias.map((categoria) => (
+                <CardCategorias key={categoria.id} categoria={categoria} />
+              ))}
+            </div>
           </div>
         </div>
       </div>
-      </div>
     </>
-  )
+  );
 }
