@@ -1,28 +1,42 @@
 import { Link } from "react-router-dom";
 import Categoria from "../../../models/Categoria";
-import { Cards } from "@phosphor-icons/react";
+import { useContext } from "react";
+import { AuthContext } from "../../../contexts/AuthContext";
+
 
 interface CardCategoriasProps {
   categoria: Categoria;
 }
 
 export default function CardCategorias({ categoria }: CardCategoriasProps) {
+  const { usuario } = useContext(AuthContext);
+
   return (
     <div>
-      <div className="container flex flex-col w-64 gap-2 border border-fuchsia-700 rounded-md p-3">
+      <div className="container flex flex-col w-64 gap-2 border rounded-md p-5 m-4 bg-white shadow-xl">
         <div className="mb-3">
-          <p className="text-3xl font-medium mb-1">{categoria.tipoServico}</p>
+          <p className="text-3xl font-medium mb-3">{categoria.tipoServico}</p>
           <p className="">{categoria.descricao}</p>
+
+          <div className="mt-8">
+            <Link className="rounded border border-slate-300 font-medium mt-3 py-1 px-3 hover:shadow-md hover:bg-[#f8f8f8]" to="/servicos">
+              <button>Veja mais</button>
+            </Link>
+          </div>
 
           <div className="flex flex-col">
             <div className="flex mt-4">
-              <Link className="text-center w-full text-white bg-fuchsia-400 hover:bg-fuchsia-600 rounded" to={`/editarcategoria/${categoria.id}`}>
-                <button>Editar</button>
-              </Link>
-                
-              <Link className="text-center w-full text-white bg-red-400 hover:bg-red-600 rounded" to={`/deletarcategoria/${categoria.id}`}>
-                <button>Deletar</button>
-              </Link>
+              {usuario.tipo === "adm" && (
+                <>
+                  <Link className="text-center w-full text-white bg-fuchsia-400 hover:bg-fuchsia-600 rounded" to={`/editarcategoria/${categoria.id}`}>
+                    <button>Editar</button>
+                  </Link>
+
+                  <Link className="text-center w-full text-white bg-red-400 hover:bg-red-600 rounded" to={`/deletarcategoria/${categoria.id}`}>
+                    <button>Deletar</button>
+                  </Link>
+                </>
+              )}
             </div>
           </div>
         </div>

@@ -9,12 +9,14 @@ import Sobre from "./pages/sobre/sobre";
 import ListarServico from "./components/servicos/listarServico/ListarServico";
 import FormServicos from "./components/servicos/formServico/FormServicos";
 import DeletarServico from "./components/servicos/deletarServico/DeletarServico";
-import Footer from "./components/footer/Footer";
+import Footer from "./components/footer/footer";
 import Navbar from "./components/header/NavBar";
-import FormCategoria from "./components/categorias/formCategorias/FormCategoria";
+import FormCategoria from "./components/categorias/formcategorias/FormCategoria";
 import DeletarCategoria from "./components/categorias/deletarCategorias/DeletarCategoria";
 import ListarCategorias from "./components/categorias/listaCategorias/ListarCategoria";
 import Perfil from "./pages/perfil/Perfil";
+
+
 
 function App() {
   return (

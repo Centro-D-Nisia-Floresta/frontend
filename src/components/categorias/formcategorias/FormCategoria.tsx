@@ -88,32 +88,34 @@ export default function FormCategoria() {
 
   return (
     <>
-      <div className="container w-full m-4 p-6 mt-5 flex flex-col items-center">
-        <h1 className="text-4xl font-semibold p-2">
-          {id === undefined ? "Cadastrar Categoria" : "Editar Categoria"}
-        </h1>
+      <div className="min-h-[80vh] flex items-center justify-center bg-gradient-to-b from-bright-turquoise-200 to-magenta-/-fuchsia-200">
+        <div className="container w-[40%] m-4 p-6 mt-5 flex flex-col items-center bg-white rounded-xl shadow-lg">
+          <h1 className="text-4xl font-semibold p-2">
+            {id === undefined ? "Cadastrar Categoria" : "Editar Categoria"}
+          </h1>
 
-        <form className="flex w-full max-w-2xl flex-col p-4" onSubmit={gerarNovaCategoria}>
-          <label htmlFor="tipoServico">Nome</label>
-          <input type="text" name="tipoServico" placeholder="Nome da categoria" className="p-2 border border-gray-300 rounded-md"
-            value={categoria.tipoServico} onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
-          />
-          
-          <label htmlFor="descricao">Descrição</label>
-          <input type="text" name="descricao" placeholder="Descreva a categoria" className="p-2 border border-gray-300 rounded-md"
-            value={categoria.descricao} onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
-          />
+          <form className="flex w-full max-w-2xl flex-col p-4" onSubmit={gerarNovaCategoria}>
+            <label htmlFor="tipoServico">Nome</label>
+            <input type="text" name="tipoServico" placeholder="Nome da categoria" className="p-2 border border-gray-300 rounded-md"
+              value={categoria.tipoServico} onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+            />
 
-          <div className="flex flex-col">
-            <div className="flex">
-              <button className="flex justify-center rounded-lg py-2 mt-5 bg-red-400 hover:bg-red-600 w-full hover:text-white" onClick={retornar}>Não</button>
-              
-              <button type="submit" className="flex justify-center rounded-lg py-2 mt-5 bg-bright-turquoise-500 hover:bg-bright-turquoise-600 w-full hover:text-white">
-                {isLoading ? <RotatingLines strokeColor="black" strokeWidth="5" animationDuration="0.75" width="24" visible={true} /> : <span>{id === undefined ? "Cadastrar" : "Atualizar"}</span>}
-              </button>
+            <label htmlFor="descricao">Descrição</label>
+            <input type="text" name="descricao" placeholder="Descreva a categoria" className="p-2 border border-gray-300 rounded-md"
+              value={categoria.descricao} onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+            />
+
+            <div className="flex flex-col">
+              <div className="flex">
+                <button className="flex justify-center rounded-lg py-2 mt-5 bg-red-400 hover:bg-red-600 w-full hover:text-white" onClick={retornar}>Não</button>
+
+                <button type="submit" className="flex justify-center rounded-lg py-2 mt-5 bg-bright-turquoise-500 hover:bg-bright-turquoise-600 w-full hover:text-white">
+                  {isLoading ? <RotatingLines strokeColor="black" strokeWidth="5" animationDuration="0.75" width="24" visible={true} /> : <span>{id === undefined ? "Cadastrar" : "Atualizar"}</span>}
+                </button>
+              </div>
             </div>
-          </div>
-        </form>
+          </form>
+        </div>
       </div>
     </>
   )

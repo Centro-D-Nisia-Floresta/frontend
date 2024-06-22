@@ -8,10 +8,10 @@ import { ToastAlerta } from "../../../utils/ToastAlerta";
 
 export default function ListarServico() {
   const navigate = useNavigate();
-  const {usuario, handleLogout} = useContext(AuthContext);
+  const { usuario, handleLogout } = useContext(AuthContext);
   const token = usuario?.token || "";
   const [servico, setServico] = useState<Servico[]>([]);
-  
+
   useEffect(() => {
     if (token === "") {
       ToastAlerta("Acesso restrito. Por favor, faça login!", "info");
@@ -38,17 +38,19 @@ export default function ListarServico() {
 
   return (
     <>
-      <div className="container w-full m-4 p-6 mt-5">
-        <div className="flex flex-col gap-3 p-3 items-center">
-          <h1 className="text-4xl font-semibold">Serviços</h1>
-          <p className="text-justify mb-4">Oferecemos cursos, palestras, workshops e mentorias para capacitar mulheres e criar novas oportunidades. Também oferecemos alguns desses serviços de forma gratuita para alcançar pessoas de baixa renda e, assim, aumentar cada vez mais a inclusão dessas mulheres no mercado de trabalho.</p>
-        </div>
+      <div className="bg-gradient-to-b from-bright-turquoise-200 to-magenta-/-fuchsia-200 flex items-center justify-center">
+        <div className="container w-full m-4 p-6 mt-5">
+          <div className="flex flex-col gap-3 p-3 items-center">
+            <h1 className="text-4xl font-semibold mb-4">Serviços</h1>
+            <p className="text-justify text-lg mb-8">Oferecemos cursos, palestras, workshops e mentorias para capacitar mulheres e criar novas oportunidades. Também oferecemos alguns desses serviços de forma gratuita para alcançar pessoas de baixa renda e, assim, aumentar cada vez mais a inclusão dessas mulheres no mercado de trabalho.</p>
+          </div>
 
-        <div className="flex flex-col min-h-[70vh]">
-          <div className="flex justify-center gap-4">
-            {servico.map((servico) => (
-              <CardServico key={servico.id} servico={servico} />
-            ))}
+          <div className="flex flex-col min-h-[70vh]">
+            <div className="flex justify-center gap-4">
+              {servico.map((servico) => (
+                <CardServico key={servico.id} servico={servico} />
+              ))}
+            </div>
           </div>
         </div>
       </div>

@@ -31,7 +31,7 @@ export default function FormServico() {
   async function buscarServicoPorId(id: string) {
     try {
       await buscar(`/servicos/${id}`, setServico, {
-        headers: {Authorization: token},
+        headers: { Authorization: token },
       });
     } catch (error: any) {
       if (error.toString().includes("401")) {
@@ -43,7 +43,7 @@ export default function FormServico() {
   async function buscarCategoriaPorId(id: string) {
     try {
       await buscar(`/categorias/${id}`, setCategoria, {
-        headers: {Authorization: token},
+        headers: { Authorization: token },
       });
     } catch (error: any) {
       if (error.toString().includes("401")) {
@@ -104,7 +104,7 @@ export default function FormServico() {
     if (id != undefined) {
       try {
         await atualizar(`/servicos`, servico, setServico, {
-          headers: {Authorization: token},
+          headers: { Authorization: token },
         });
         ToastAlerta("O serviço foi atualizado com sucesso!", "successo");
       } catch (error: any) {
@@ -117,7 +117,7 @@ export default function FormServico() {
     } else {
       try {
         await cadastrar(`/servicos`, servico, setServico, {
-          headers: {Authorization: token},
+          headers: { Authorization: token },
         });
         ToastAlerta("O serviço foi cadastrado com sucesso", "successo");
       } catch (error: any) {
@@ -135,59 +135,61 @@ export default function FormServico() {
 
   return (
     <>
-      <div className="container w-full m-4 p-6 mt-5 flex flex-col items-center">
-        <h1 className="text-4xl font-semibold p-2">{id !== undefined ? "Editar Serviço" : "Cadastrar Serviço"}</h1>
+      <div className="flex items-center justify-center bg-gradient-to-b from-bright-turquoise-200 to-magenta-/-fuchsia-200">
+        <div className="container w-[40%] m-4 p-6 mt-5 flex flex-col items-center bg-white rounded-xl shadow-lg">
+          <h1 className="text-4xl font-semibold p-2">{id !== undefined ? "Editar Serviço" : "Cadastrar Serviço"}</h1>
 
-        <form className="flex w-full max-w-2xl flex-col p-4" onSubmit={gerarNovaServico}>
-          <label htmlFor="nome">Nome</label>
-          <input type="text" name="nome" placeholder="Nome do produto" className="p-2 border border-gray-300 rounded-md"
-            value={servico.nome} onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
-          />
+          <form className="flex w-full max-w-2xl flex-col p-4" onSubmit={gerarNovaServico}>
+            <label htmlFor="nome">Nome</label>
+            <input type="text" name="nome" placeholder="Nome do produto" className="p-2 border border-gray-300 rounded-md"
+              value={servico.nome} onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+            />
 
-          <label htmlFor="foto" className="mt-2">Foto</label>
-          <input type="url" name="foto" placeholder="URL da foto" className="p-2 border border-gray-300 rounded-md"
-            value={servico.foto} onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
-          />
+            <label htmlFor="foto" className="mt-2">Foto</label>
+            <input type="url" name="foto" placeholder="URL da foto" className="p-2 border border-gray-300 rounded-md"
+              value={servico.foto} onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+            />
 
-          <label htmlFor="vagas" className="mt-2">Vagas</label>
-          <input type="number" name="vagas" placeholder="Quantidade de vagas disponíveis" className="p-2 border border-gray-300 rounded-md" 
-            value={servico.vagas} onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
-          />
+            <label htmlFor="vagas" className="mt-2">Vagas</label>
+            <input type="number" name="vagas" placeholder="Quantidade de vagas disponíveis" className="p-2 border border-gray-300 rounded-md"
+              value={servico.vagas} onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+            />
 
-          <label htmlFor="duracao" className="mt-2">Duração</label>
-          <input type="text" name="duracao" placeholder="Tempo investido" className="p-2 border border-gray-300 rounded-md"
-            value={servico.duracao} onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
-          />
+            <label htmlFor="duracao" className="mt-2">Duração</label>
+            <input type="text" name="duracao" placeholder="Tempo investido" className="p-2 border border-gray-300 rounded-md"
+              value={servico.duracao} onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+            />
 
-          <div className="mt-2">
-            <label htmlFor="gratuidade">Gratuito?</label>
-            <input type="checkbox" name="gratuidade" className="ml-4" checked={servico.gratuidade} onChange={atualizarEstado} /> Sim
-          </div>
+            <div className="mt-2">
+              <label htmlFor="gratuidade">Gratuito?</label>
+              <input type="checkbox" name="gratuidade" className="ml-4" checked={servico.gratuidade} onChange={atualizarEstado} /> Sim
+            </div>
 
-          <label htmlFor="preco" className="mt-2">Valor</label>
-          <input type="number" name="preco" placeholder="Valor investido" className="p-2 border border-gray-300 rounded-md" value={servico.preco} onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)} />
+            <label htmlFor="preco" className="mt-2">Valor</label>
+            <input type="number" name="preco" placeholder="Valor investido" className="p-2 border border-gray-300 rounded-md" value={servico.preco} onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)} />
 
-          <label htmlFor="categoria" className="mt-2">Categoria</label>
-          <select name="categoria" className="p-2 border border-gray-300 rounded-md"
-          onChange={(e) => buscarCategoriaPorId(e.currentTarget.value)}>
-            <option value="" selected disabled>Selecione uma Categoria</option>
+            <label htmlFor="categoria" className="mt-2">Categoria</label>
+            <select name="categoria" className="p-2 border border-gray-300 rounded-md"
+              onChange={(e) => buscarCategoriaPorId(e.currentTarget.value)}>
+              <option value="" selected disabled>Selecione uma Categoria</option>
               {categorias.map((categoria) => (
                 <>
                   <option value={categoria.id}>{categoria.tipoServico}</option>
                 </>
               ))}
-          </select>
-          
-          <div className="flex flex-col">
-            <div className="flex">
-            <button className="flex justify-center rounded-lg py-2 mt-5 bg-red-400 hover:bg-red-600 w-full hover:text-white" onClick={retornar}>Não</button>
-            
-            <button type="submit" className="flex justify-center rounded-lg py-2 mt-5 bg-bright-turquoise-500 hover:bg-bright-turquoise-600 w-full hover:text-white" disabled={carregandoCategoria || isLoading}>
-              {isLoading ? <RotatingLines strokeColor="white" strokeWidth="5" animationDuration="0.75" width="24" visible={true} /> : <span>{id !== undefined ? "Atualizar" : "Cadastre um Serviço"}</span>}
-            </button>
+            </select>
+
+            <div className="flex flex-col">
+              <div className="flex">
+                <button className="flex justify-center rounded-lg py-2 mt-5 bg-red-400 hover:bg-red-600 w-full hover:text-white" onClick={retornar}>Não</button>
+
+                <button type="submit" className="flex justify-center rounded-lg py-2 mt-5 bg-bright-turquoise-500 hover:bg-bright-turquoise-600 w-full hover:text-white" disabled={carregandoCategoria || isLoading}>
+                  {isLoading ? <RotatingLines strokeColor="white" strokeWidth="5" animationDuration="0.75" width="24" visible={true} /> : <span>{id !== undefined ? "Atualizar" : "Cadastre um Serviço"}</span>}
+                </button>
+              </div>
             </div>
-          </div>
-        </form>
+          </form>
+        </div>
       </div>
     </>
   )
