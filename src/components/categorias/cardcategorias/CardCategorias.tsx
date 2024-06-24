@@ -20,7 +20,7 @@ export default function CardCategorias({ categoria }: CardCategoriasProps) {
 
           <div className="mt-8">
             <Link className="rounded border border-slate-300 font-medium mt-3 py-1 px-3 hover:shadow-md hover:bg-[#f8f8f8]" to="/servicos">
-              <button>Veja mais</button>
+              <button>Ver mais</button>
             </Link>
           </div>
 
