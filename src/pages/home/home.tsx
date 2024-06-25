@@ -19,7 +19,7 @@ export default function Home() {
         <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 items-center bg-gradient-to-b from-sky-100 to-magenta-/-fuchsia-100">
           <div className="flex items-center">
             <div className="text-center mx-20 md:text-left md:p-0">
-              <div className="mt-20 text-primary font-thin">Educação e Capacitação para Mulheres</div>
+              <div className="mt-20 text-primary font-light">Educação e Capacitação para Mulheres</div>
               <h3 className="text-4xl  mb-4 mt-6 font-light">REDUZINDO A DESIGUALDADE DE GÊNERO NA TECNOLOGIA</h3>
 
               <button className="mb-20 m-6 mx-auto text-xl bg-fuchsia-950 hover:bg-fuchsia-800 text-white font-light hover:text-white py-2 px-4 border border-violet-800 hover:border-transparent rounded-full">Quero Saber Mais</button>
