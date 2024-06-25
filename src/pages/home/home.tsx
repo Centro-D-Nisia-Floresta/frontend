@@ -66,7 +66,7 @@ export default function Home() {
           </div>
         </div>
 
-        <section className="container mx-auto mt-20 grid grid-cols-1 md:grid-cols-2 items-center">
+        <section className="container mx-auto  grid grid-cols-1 md:grid-cols-2 items-center">
           <div className="text-center mx-10 md:text-left md:p-0 items-center mb-10 ">
             <h2 className="text-3xl font-light mt-4 mb-0 ">Comece agora uma carreira em tecnologia!</h2>
             <p className=" text-2xl font-thin mb-10 mt-10"> Participe de nossos cursos, palestras, workshops e mentorias projetados para empoderar e capacitar mulheres para o mercado de trabalho em tecnologia. </p>
@@ -77,7 +77,7 @@ export default function Home() {
           </div>
 
           <div className="mx-auto">
-            <img src="https://ik.imagekit.io/rx2wvtnsm/2FED39F8-D02F-4917-9B0A-781B6FA4ABAF_1_201_a.jpeg?updatedAt=1719326381719" alt="" />
+            <img src="https://ik.imagekit.io/rx2wvtnsm/Centro%20de%20Desenvolvimento%20(3).png?updatedAt=1719340635958" alt="" />
           </div>
         </section>
 

@@ -7,7 +7,7 @@ function Contato() {
 
   return (
     <>
-      <div className="mt-40 flex h-screen items-center justify-center font-light">
+      <div className="p-10 bg-gradient-to-b from-sky-100 to-magenta-/-fuchsia-100 bg-left bg-cover mt-30 flex h-screen items-center justify-center font-light">
         {}
 
         <div className="bg-white rounded-xl w-2/3  shadow-md shadow-fuchsia-950  py-10">
