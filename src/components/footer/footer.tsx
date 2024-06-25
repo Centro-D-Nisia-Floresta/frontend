@@ -1,32 +1,36 @@
-import { GithubLogo, UsersThree } from "@phosphor-icons/react";
+import { Envelope, GithubLogo } from "@phosphor-icons/react";
 import { Link } from "react-router-dom";
 
-export default function Footer() {
+function Footer() {
   return (
     <>
-      <div className="w-full p-2 flex justify-around bg-gradient-to-red from-fuchsia-400 to-bright-turquoise-300">
-        <div className="flex justify-start flex-col p-2">
-          <Link to="/home">
-            <span id="logo" className="uppercase font-semibold">
-              Nísia Floresta
-            </span>
+      <div className="mx-auto bg-gradient-to-b from-sky-100 to-magenta-/-fuchsia-100 bg-left bg-cover ">
+        <div className="flex justify-between items-center text-black py-1 px-4 mx-20 mt-10 ">
+          <Link to="/sobre" className=" items-center">
+            <p className="text-2xl font-medium">NÍSIA FLORESTA</p>
           </Link>
-          <p className="text-md italic">Acreditamos que a educação transforma vidas!</p>
-          <p className="text-sm">2024 | Projeto Integrador - ODS 5</p>
-        </div>
+          <div className="flex-1 flex justify-center ml-60">
+            <Link to="/contato" className="hover:underline font-semibold">
+              Fale conosco
+            </Link>
+          </div>
 
-        <div className="p-2">
-          <p>Nos siga para acompanhar as novidades:</p>
-          <div className="flex gap-3 justify-center">
-            <a href="https://github.com/Centro-D-Nisia-Floresta" target="_blank" className="hover:text-fuchsia-500">
-              <GithubLogo size={30} weight="light" />
+          <div className="flex-1 flex justify-end gap-3 p-2">
+            <a target="_blank" href="https://github.com/Centro-D-Nisia-Floresta">
+              <GithubLogo size={36} weight="regular" />
             </a>
-            <a href="#" target="_blanck" className="hover:text-fuchsia-500">
-              <UsersThree size={30} weight="light" />
+            <a target="_blank" href="https:/cdnisiafloresta@gmail.com">
+              <Envelope size={36} weight="regular" />
             </a>
           </div>
+        </div>
+
+        <div className="text-xs pb-5 flex flex-col justify-center items-center gap-0 ">
+          <hr className="border-black w-[26%] justify-center mt-3" />
+          <p className="pt-3">© 2024 Centro de Desenvolvimento Nísia Floresta</p>
         </div>
       </div>
     </>
   );
 }
+export default Footer;

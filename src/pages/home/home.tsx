@@ -22,7 +22,7 @@ export default function Home() {
               <div className="mt-20 text-primary font-thin">Educação e Capacitação para Mulheres</div>
               <h3 className="text-4xl  mb-4 mt-6 font-light">REDUZINDO A DESIGUALDADE DE GÊNERO NA TECNOLOGIA</h3>
 
-              <button className="mb-20 m-6 mx-auto text-xl bg-violet-600 hover:bg-violet-800 text-white font-light hover:text-white py-2 px-4 border border-violet-800 hover:border-transparent rounded-full">Quero Saber Mais</button>
+              <button className="mb-20 m-6 mx-auto text-xl bg-fuchsia-950 hover:bg-fuchsia-800 text-white font-light hover:text-white py-2 px-4 border border-violet-800 hover:border-transparent rounded-full">Quero Saber Mais</button>
             </div>
           </div>
 
@@ -51,30 +51,33 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="bg-violet-600 bg-left bg-cover ">
+        <div className="bg-magenta-/-fuchsia-950 bg-left bg-cover ">
           <div className="container mx-auto mt-0 grid grid-cols-1  items-center text-white">
             <div className="text-center mt-28 mx-10  md:text-left md:p-0">
               <h1 className="text-center text-4xl  mt-4 mb-0 font-thin">NOSSA MISSÃO</h1>
               <h1 className="text-center text-5xl  mt-4 mb-0 font-light">Educação e Capacitação Para Mulheres! </h1>
 
-              <p className=" text-justify text-2xl font-thin mt-14">O Centro de Desenvolvimento Nísia Floresta tem como missão transformar a vida das mulheres por meio da educação, capacitando-as com formações que promovam o empoderamento e a igualdade de gênero na área de tecnologia. Nossos programas visam preparar as mulheres para se destacarem em um mercado de trabalho cada vez mais digital e competitivo, promovendo a inovação e impulsionando o crescimento sustentável.</p>
+              <p className=" text-justify text-2xl font-thin mb-40 mt-14">
+                O Centro de Desenvolvimento Nísia Floresta tem como missão transformar a vida das mulheres por meio da educação, capacitando-as com formações que promovam o empoderamento e a igualdade de gênero na área de tecnologia. Nossos programas visam preparar as mulheres para se destacarem em um mercado de trabalho cada vez mais digital e competitivo, promovendo a inovação e impulsionando o crescimento sustentável em busca de um futuro melhor.
+              </p>
 
-              <img className="  w-100 h-100 object-cover mx-auto mt-20 mb-20 " src="https://ik.imagekit.io/rx2wvtnsm/Educac%CC%A7a%CC%83o%20e%20capacitac%CC%A7a%CC%83o%20para%20um%20novo%20amanha%CC%83!%20(3).png?updatedAt=1719288489417" alt="" />
+              {/* <img className="  w-100 h-100 object-cover mx-auto mt-20 mb-20 " src="https://ik.imagekit.io/rx2wvtnsm/Logokit%20Ni%CC%81sia%20Floresta%20(5).png?updatedAt=1719317726276" alt="" /> */}
             </div>
           </div>
         </div>
 
-        <section className="mx-auto  grid grid-cols-2 mt-10 mb-10 p-5">
-          <div className="flex flex-col justify-center">
-            <h2 className="text-3xl font-light p-2 text-center">Deseja transformar sua carreira em tecnologia?</h2>
-            <p className="mx-auto text-base text-justify p-3">Capacite-se conosco e mude sua vida! Junte-se aos nossos cursos e palestras, desenvolvidos para abrir portas no mercado de trabalho. Juntos, vamos construir um futuro mais justo e igualitário.</p>
-            <Link to="/servicos" className="flex justify-center">
-              <button className="font-medium border p-3 rounded-md bg-fuchsia-300 hover:bg-fuchsia-700 hover:text-white">Conheça nossos serviços aqui!</button>
+        <section className="container mx-auto mt-20 grid grid-cols-1 md:grid-cols-2 items-center">
+          <div className="text-center mx-10 md:text-left md:p-0 items-center mb-10 ">
+            <h2 className="text-3xl font-light mt-4 mb-0 ">Comece agora uma carreira em tecnologia!</h2>
+            <p className=" text-2xl font-thin mb-10 mt-10"> Participe de nossos cursos, palestras, workshops e mentorias projetados para empoderar e capacitar mulheres para o mercado de trabalho em tecnologia. </p>
+
+            <Link to="/servicos" className=" items-center">
+              <button className="border p-4 text-xl py-3 px-4 bg-fuchsia-950 text-white hover:bg-fuchsia-800 font-light  hover:text-white rounded-full">Conheça Nossos Serviços Aqui!</button>
             </Link>
           </div>
 
-          <div className="">
-            <img src="https://ik.imagekit.io/rx2wvtnsm/Dayflow_-_Teamwork.png?updatedAt=1717618544997" alt="" />
+          <div className="mx-auto">
+            <img src="https://ik.imagekit.io/rx2wvtnsm/2FED39F8-D02F-4917-9B0A-781B6FA4ABAF_1_201_a.jpeg?updatedAt=1719326381719" alt="" />
           </div>
         </section>
 
@@ -83,3 +86,5 @@ export default function Home() {
     </>
   );
 }
+
+//Junte-se a nós nessa jornada e construa um amanhã mais brilhante!
