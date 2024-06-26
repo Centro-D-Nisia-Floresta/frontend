@@ -6,11 +6,9 @@ export default function Footer() {
     <>
       <div className="m-6">
         <div className="flex justify-between items-center bg-white text-black py-1 px-4 mx-10">
-          <Link to="/sobre" className="">
-            <p className="text-2xl font-light flex-1">Nísia Floresta</p>
-          </Link>
+          <p className="text-2xl font-light flex-1">Nísia Floresta</p>
 
-          <div className="flex-2 ml-80 ">
+          <div className="text-xs flex flex-col justify-center items-center gap-3">
             <p className="pt-3">© 2024 Centro de Desenvolvimento Nísia Floresta</p>
           </div>
 
@@ -18,7 +16,7 @@ export default function Footer() {
             <a target="_blank" href="https://github.com/Centro-D-Nisia-Floresta">
               <GithubLogo size={30} weight="regular" />
             </a>
-            <a target="_blank" href="cdnisiafloresta@gmail.com">
+            <a target="_blank" href="https://linktr.ee/cdnisiafloresta">
               <UsersThree size={30} weight="regular" />
             </a>
           </div>

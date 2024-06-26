@@ -5,7 +5,7 @@ export default function Sobre() {
     <>
       <div className="bg-fuchsia-950">
         <div className="pt-5">
-          <div className="bg-fuchsia-950 text-white container mx-auto mt-20 mb-40 grid grid-cols-1 md:grid-cols-2 items-center">
+          <div className="bg-fuchsia-950 min-h-[700px] text-white container mx-auto mt-20 mb-40 grid grid-cols-1 md:grid-cols-2 items-center ">
             <div className="flex items-center">
               <div className="text-center mx-10 md:text-left md:p-0">
                 <h1 className="text-5xl  mt-4 mb-0 font-thin">Centro de Desenvolvimento</h1>
@@ -24,19 +24,19 @@ export default function Sobre() {
             </div>
           </div>
 
-          <div className="bg-gradient-to-b  from-sky-100 to-magenta-/-fuchsia-100 bg-left bg-cover flex flex-col items-center">
-            <h2 className="text-3xl font-light mb-4 p-10 mt-20">Nosso Time de Desenvolvedores</h2>
+          <div className="bg-gradient-to-b  from-sky-100 to-magenta-/-fuchsia-100 bg-left bg-cover flex flex-col items-center min-h-[1300px]">
+            <h2 className="text-3xl font-light p-10 mt-20">NOSSO TIME DE DESENVOLVEDORES</h2>
 
-            <div className="flex flex-row gap-6 p-10">
+            <div className="flex flex-row gap-8 p-10 ">
               <div className="border shadow-md shadow-gray-600  bg-white rounded-md w-56 p-12">
                 <img src="https://ik.imagekit.io/rx2wvtnsm/Sobre+N%C3%B3s_2/DSCF0184-500x500.jpg" alt="Beatriz" />
                 <h3 className="text-lg font-medium mt-2">Beatriz Alves</h3>
                 <p className="text-sm">Desenvolvedora FullStack JavaScript</p>
                 <div className="flex gap-2 mt-3 justify-center">
-                  <a target="_blanck" href="https://www.linkedin.com/in/beatrizalsilva/" className="hover:text-bright-turquoise-500">
+                  <a target="_blanck" href="https://www.linkedin.com/in/beatrizalsilva/" className="hover:text-fuchsia-800">
                     <LinkedinLogo size={30} weight="light" />
                   </a>
-                  <a target="_blanck" href="https://github.com/beatrizalsilva" className="hover:text-bright-turquoise-500">
+                  <a target="_blanck" href="https://github.com/beatrizalsilva" className="hover:text-fuchsia-800">
                     <GithubLogo size={30} weight="light" />
                   </a>
                 </div>
@@ -47,10 +47,10 @@ export default function Sobre() {
                 <h3 className="text-lg font-medium mt-2">Christian Alvim</h3>
                 <p className="text-sm">Desenvolvedor FullStack JavaScript</p>
                 <div className="flex gap-2 mt-3 justify-center">
-                  <a target="_blanck" href="https://www.linkedin.com/in/christian-a-8a4084137/" className="hover:text-bright-turquoise-500">
+                  <a target="_blanck" href="https://www.linkedin.com/in/christian-a-8a4084137/" className="hover:text-fuchsia-800">
                     <LinkedinLogo size={30} weight="light" />
                   </a>
-                  <a target="_blanck" href="https://github.com/christianfelps" className="hover:text-bright-turquoise-500">
+                  <a target="_blanck" href="https://github.com/christianfelps" className="hover:text-fuchsia-800">
                     <GithubLogo size={30} weight="light" />
                   </a>
                 </div>
@@ -61,10 +61,10 @@ export default function Sobre() {
                 <h3 className="text-lg font-medium mt-2">Ingrid Dias</h3>
                 <p className="text-sm">Desenvolvedora FullStack JavaScript</p>
                 <div className="flex gap-2 mt-3 justify-center">
-                  <a target="_blanck" href="https://www.linkedin.com/in/ingrid-dias-souza" className="hover:text-bright-turquoise-500">
+                  <a target="_blanck" href="https://www.linkedin.com/in/ingrid-dias-souza" className="hover:text-fuchsia-800">
                     <LinkedinLogo size={30} weight="light" />
                   </a>
-                  <a target="_blanck" href="https://github.com/ingrid-dias" className="hover:text-bright-turquoise-500">
+                  <a target="_blanck" href="https://github.com/ingrid-dias" className="hover:text-fuchsia-800">
                     <GithubLogo size={30} weight="light" />
                   </a>
                 </div>
@@ -75,26 +75,26 @@ export default function Sobre() {
                 <h3 className="text-lg font-medium mt-2">Lucas Cardoso</h3>
                 <p className="text-sm">Desenvolvedor FullStack JavaScript</p>
                 <div className="flex gap-2 mt-3 justify-center">
-                  <a target="_blanck" href="https://www.linkedin.com/in/lucas-henrique-ferreira-cardoso-/" className="hover:text-bright-turquoise-500">
+                  <a target="_blanck" href="https://www.linkedin.com/in/lucas-henrique-ferreira-cardoso-/" className="hover:text-fuchsia-800">
                     <LinkedinLogo size={30} weight="light" />
                   </a>
-                  <a target="_blanck" href="https://github.com/lucashfcardoso" className="hover:text-bright-turquoise-500">
+                  <a target="_blanck" href="https://github.com/lucashfcardoso" className="hover:text-fuchsia-800">
                     <GithubLogo size={30} weight="light" />
                   </a>
                 </div>
               </div>
             </div>
 
-            <div className="flex flex-row gap-6 mt-7 justify-center p-3 mb-6">
+            <div className="flex flex-row gap-8 mt-7 justify-center p-3 mb-6">
               <div className="border shadow-md shadow-gray-600 bg-white rounded-md w-56 p-12">
                 <img src="https://ik.imagekit.io/rx2wvtnsm/Sobre+N%C3%B3s_2/85A4359D-DD1D-4244-8265-E32D05AB6CE2.jpeg" alt="Marcelo" />
                 <h3 className="text-lg font-medium mt-2">Marcelo Henrique</h3>
                 <p className="text-sm">Desenvolvedor FullStack JavaScript</p>
                 <div className="flex gap-2 mt-3 justify-center">
-                  <a target="_blanck" href="https://www.linkedin.com/in/marcelohsoares/" className="hover:text-bright-turquoise-500">
+                  <a target="_blanck" href="https://www.linkedin.com/in/marcelohsoares/" className="hover:text-fuchsia-800">
                     <LinkedinLogo size={30} weight="light" />
                   </a>
-                  <a target="_blanck" href="https://github.com/Marshel0" className="hover:text-bright-turquoise-500">
+                  <a target="_blanck" href="https://github.com/Marshel0" className="hover:text-fuchsia-800">
                     <GithubLogo size={30} weight="light" />
                   </a>
                 </div>
@@ -105,10 +105,10 @@ export default function Sobre() {
                 <h3 className="text-lg font-medium mt-2">Milena Semanaka</h3>
                 <p className="text-sm">Desenvolvedora FullStack JavaScript</p>
                 <div className="flex gap-2 mt-3 justify-center">
-                  <a target="_blanck" href="https://www.linkedin.com/in/msemanaka/" className="hover:text-bright-turquoise-500">
+                  <a target="_blanck" href="https://www.linkedin.com/in/msemanaka/" className="hover:text-fuchsia-600">
                     <LinkedinLogo size={30} weight="light" />
                   </a>
-                  <a target="_blanck" href="https://github.com/msemanaka" className="hover:text-bright-turquoise-500">
+                  <a target="_blanck" href="https://github.com/msemanaka" className="hover:text-fuchsia-800">
                     <GithubLogo size={30} weight="light" />
                   </a>
                 </div>
@@ -119,10 +119,10 @@ export default function Sobre() {
                 <h3 className="text-lg font-medium mt-2">Pamela Rodrigues</h3>
                 <p className="text-sm">Desenvolvedora FullStack JavaScript</p>
                 <div className="flex gap-2 mt-3 justify-center">
-                  <a target="_blanck" href="https://www.linkedin.com/in/pamelarodriguesqueiroz/" className="hover:text-bright-turquoise-500">
+                  <a target="_blanck" href="https://www.linkedin.com/in/pamelarodriguesqueiroz/" className="hover:text-fuchsia-800">
                     <LinkedinLogo size={30} weight="light" />
                   </a>
-                  <a target="_blanck" href="https://github.com/PamelaZuni" className="hover:text-bright-turquoise-500">
+                  <a target="_blanck" href="https://github.com/PamelaZuni" className="hover:text-fuchsia-800">
                     <GithubLogo size={30} weight="light" />
                   </a>
                 </div>
@@ -163,57 +163,57 @@ export default function Sobre() {
 //           <h2 className="text-3xl font-medium mb-6 p-2">Quem Somos</h2>
 
 //           <div className="flex flex-row gap-6 p-3">
-//             <div className="border border-bright-turquoise-200 hover:border-bright-turquoise-500 rounded-md w-56 p-12">
+//             <div className="border border-bright-turquoise-200 hover:border-fuchsia-800 rounded-md w-56 p-12">
 //               <img src="https://ik.imagekit.io/rx2wvtnsm/Sobre+N%C3%B3s_2/DSCF0184-500x500.jpg" alt="Beatriz" />
 //               <h3 className="text-lg font-medium mt-2">Beatriz Alves</h3>
 //               <p className="text-sm">Desenvolvedora FullStack JavaScript</p>
 //               <div className="flex gap-2 mt-3 justify-center">
-//                 <a target="_blanck" href="https://www.linkedin.com/in/beatrizalsilva/" className="hover:text-bright-turquoise-500">
+//                 <a target="_blanck" href="https://www.linkedin.com/in/beatrizalsilva/" className="hover:text-fuchsia-800">
 //                   <LinkedinLogo size={30} weight="light" />
 //                 </a>
-//                 <a target="_blanck" href="https://github.com/beatrizalsilva" className="hover:text-bright-turquoise-500">
+//                 <a target="_blanck" href="https://github.com/beatrizalsilva" className="hover:text-fuchsia-800">
 //                   <GithubLogo size={30} weight="light" />
 //                 </a>
 //               </div>
 //             </div>
 
-//             <div className="border border-bright-turquoise-200 hover:border-bright-turquoise-500 rounded-md w-56 p-12">
+//             <div className="border border-bright-turquoise-200 hover:border-fuchsia-800 rounded-md w-56 p-12">
 //               <img src="https://ik.imagekit.io/rx2wvtnsm/Sobre+N%C3%B3s_2/DSCF0246-500x500.jpg" alt="Christian" />
 //               <h3 className="text-lg font-medium mt-2">Christian Alvim</h3>
 //               <p className="text-sm">Desenvolvedor FullStack JavaScript</p>
 //               <div className="flex gap-2 mt-3 justify-center">
-//                 <a target="_blanck" href="https://www.linkedin.com/in/christian-a-8a4084137/" className="hover:text-bright-turquoise-500">
+//                 <a target="_blanck" href="https://www.linkedin.com/in/christian-a-8a4084137/" className="hover:text-fuchsia-800">
 //                   <LinkedinLogo size={30} weight="light" />
 //                 </a>
-//                 <a target="_blanck" href="https://github.com/christianfelps" className="hover:text-bright-turquoise-500">
+//                 <a target="_blanck" href="https://github.com/christianfelps" className="hover:text-fuchsia-800">
 //                   <GithubLogo size={30} weight="light" />
 //                 </a>
 //               </div>
 //             </div>
 
-//             <div className="border border-bright-turquoise-200 hover:border-bright-turquoise-500 rounded-md w-56 p-12">
+//             <div className="border border-bright-turquoise-200 hover:border-fuchsia-800 rounded-md w-56 p-12">
 //               <img src="https://ik.imagekit.io/rx2wvtnsm/Sobre+N%C3%B3s_2/DSCF0190-500x500%20(1).jpg" alt="Ingrid" />
 //               <h3 className="text-lg font-medium mt-2">Ingrid Dias</h3>
 //               <p className="text-sm">Desenvolvedora FullStack JavaScript</p>
 //               <div className="flex gap-2 mt-3 justify-center">
-//                 <a target="_blanck" href="https://www.linkedin.com/in/ingrid-dias-souza" className="hover:text-bright-turquoise-500">
+//                 <a target="_blanck" href="https://www.linkedin.com/in/ingrid-dias-souza" className="hover:text-fuchsia-800">
 //                   <LinkedinLogo size={30} weight="light" />
 //                 </a>
-//                 <a target="_blanck" href="https://github.com/ingrid-dias" className="hover:text-bright-turquoise-500">
+//                 <a target="_blanck" href="https://github.com/ingrid-dias" className="hover:text-fuchsia-800">
 //                   <GithubLogo size={30} weight="light" />
 //                 </a>
 //               </div>
 //             </div>
 
-//             <div className="border border-bright-turquoise-200 hover:border-bright-turquoise-500 rounded-md w-56 p-12">
+//             <div className="border border-bright-turquoise-200 hover:border-fuchsia-800 rounded-md w-56 p-12">
 //               <img src="https://ik.imagekit.io/rx2wvtnsm/Sobre+N%C3%B3s_2/D75F0B2E-FA28-490F-AD1E-C1986F493DB5_1_201_a-500x500.jpg" alt="Lucas" />
 //               <h3 className="text-lg font-medium mt-2">Lucas Cardoso</h3>
 //               <p className="text-sm">Desenvolvedor FullStack JavaScript</p>
 //               <div className="flex gap-2 mt-3 justify-center">
-//                 <a target="_blanck" href="https://www.linkedin.com/in/lucas-henrique-ferreira-cardoso-/" className="hover:text-bright-turquoise-500">
+//                 <a target="_blanck" href="https://www.linkedin.com/in/lucas-henrique-ferreira-cardoso-/" className="hover:text-fuchsia-800">
 //                   <LinkedinLogo size={30} weight="light" />
 //                 </a>
-//                 <a target="_blanck" href="https://github.com/lucashfcardoso" className="hover:text-bright-turquoise-500">
+//                 <a target="_blanck" href="https://github.com/lucashfcardoso" className="hover:text-fuchsia-800">
 //                   <GithubLogo size={30} weight="light" />
 //                 </a>
 //               </div>
@@ -221,43 +221,43 @@ export default function Sobre() {
 //           </div>
 
 //           <div className="flex flex-row gap-6 mt-7 justify-center p-3 mb-6">
-//             <div className="border border-bright-turquoise-200 hover:border-bright-turquoise-500 rounded-md w-56 p-12">
+//             <div className="border border-bright-turquoise-200 hover:border-fuchsia-800 rounded-md w-56 p-12">
 //               <img src="https://ik.imagekit.io/rx2wvtnsm/Sobre+N%C3%B3s_2/85A4359D-DD1D-4244-8265-E32D05AB6CE2.jpeg" alt="Marcelo" />
 //               <h3 className="text-lg font-medium mt-2">Marcelo Henrique</h3>
 //               <p className="text-sm">Desenvolvedor FullStack JavaScript</p>
 //               <div className="flex gap-2 mt-3 justify-center">
-//                 <a target="_blanck" href="https://www.linkedin.com/in/marcelohsoares/" className="hover:text-bright-turquoise-500">
+//                 <a target="_blanck" href="https://www.linkedin.com/in/marcelohsoares/" className="hover:text-fuchsia-800">
 //                   <LinkedinLogo size={30} weight="light" />
 //                 </a>
-//                 <a target="_blanck" href="https://github.com/Marshel0" className="hover:text-bright-turquoise-500">
+//                 <a target="_blanck" href="https://github.com/Marshel0" className="hover:text-fuchsia-800">
 //                   <GithubLogo size={30} weight="light" />
 //                 </a>
 //               </div>
 //             </div>
 
-//             <div className="border border-bright-turquoise-200 hover:border-bright-turquoise-500 rounded-md w-56 p-12">
+//             <div className="border border-bright-turquoise-200 hover:border-fuchsia-800 rounded-md w-56 p-12">
 //               <img src="https://ik.imagekit.io/rx2wvtnsm/Sobre%20n%C3%B3s/milena500.png?updatedAt=1717691735278" alt="Milena" />
 //               <h3 className="text-lg font-medium mt-2">Milena Semanaka</h3>
 //               <p className="text-sm">Desenvolvedora FullStack JavaScript</p>
 //               <div className="flex gap-2 mt-3 justify-center">
-//                 <a target="_blanck" href="https://www.linkedin.com/in/msemanaka/" className="hover:text-bright-turquoise-500">
+//                 <a target="_blanck" href="https://www.linkedin.com/in/msemanaka/" className="hover:text-fuchsia-800">
 //                   <LinkedinLogo size={30} weight="light" />
 //                 </a>
-//                 <a target="_blanck" href="https://github.com/msemanaka" className="hover:text-bright-turquoise-500">
+//                 <a target="_blanck" href="https://github.com/msemanaka" className="hover:text-fuchsia-800">
 //                   <GithubLogo size={30} weight="light" />
 //                 </a>
 //               </div>
 //             </div>
 
-//             <div className="border border-bright-turquoise-200 hover:border-bright-turquoise-500 rounded-md w-56 p-12">
+//             <div className="border border-bright-turquoise-200 hover:border-fuchsia-800 rounded-md w-56 p-12">
 //               <img src="https://ik.imagekit.io/rx2wvtnsm/Sobre+N%C3%B3s_2/977A07B9-9A33-4397-8380-7F86390DC51A_1_201_a.jpeg" alt="Pamela" />
 //               <h3 className="text-lg font-medium mt-2">Pamela Rodrigues</h3>
 //               <p className="text-sm">Desenvolvedora FullStack JavaScript</p>
 //               <div className="flex gap-2 mt-3 justify-center">
-//                 <a target="_blanck" href="https://www.linkedin.com/in/pamelarodriguesqueiroz/" className="hover:text-bright-turquoise-500">
+//                 <a target="_blanck" href="https://www.linkedin.com/in/pamelarodriguesqueiroz/" className="hover:text-fuchsia-800">
 //                   <LinkedinLogo size={30} weight="light" />
 //                 </a>
-//                 <a target="_blanck" href="https://github.com/PamelaZuni" className="hover:text-bright-turquoise-500">
+//                 <a target="_blanck" href="https://github.com/PamelaZuni" className="hover:text-fuchsia-800">
 //                   <GithubLogo size={30} weight="light" />
 //                 </a>
 //               </div>
