@@ -48,12 +48,12 @@ function Cadastro() {
     if (confirmaSenha === usuario.senha && usuario.senha.length >= 8) {
       try {
         await cadastrarUsuario(`/usuarios/cadastrar`, usuario, setUsuario);
-        ToastAlerta("Cadastro realizado com sucesso!", 'sucesso');
+        ToastAlerta("Cadastro realizado com sucesso!", "sucesso");
       } catch (error) {
-        ToastAlerta("Erro ao cadastrar usuário!", 'erro');
+        ToastAlerta("Erro ao cadastrar usuário!", "erro");
       }
     } else {
-      ToastAlerta("As senhas não coincidem!", 'info')
+      ToastAlerta("As senhas não coincidem!", "info");
       setUsuario({ ...usuario, senha: "" });
       setConfirmaSenha("");
     }
@@ -62,49 +62,41 @@ function Cadastro() {
 
   return (
     <>
-      <div className="container w-full m-4 p-6 mt-5 flex flex-col items-center">
-        <div className="mb-3 flex flex-col gap-1">
-          <h2 className="text-2xl font-medium sm:text-[2rem]">Cadastre-se!</h2>
+      <div className="flex items-center justify-center container w-full p-10 flex-col bg-gradient-to-b from-sky-100 to-magenta-/-fuchsia-100  gap-3 min-h-[80vh] min-w-[160vh]">
+        <div className=" mb-3">
+          <h2 className="text-2xl  font-light sm:text-[2rem]">Cadastre-se!</h2>
         </div>
 
         <form className="flex flex-col justify-center gap-2 w-80" onSubmit={cadastrarNovoUsuario}>
           <label htmlFor="nome">Nome</label>
-          <input type="text" name="nome" placeholder="Seu nome" className="p-2 border border-gray-300 rounded-md"
-            value={usuario.nome} onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
-          />
+          <input type="text" name="nome" placeholder="Seu nome" className="p-2 border border-gray-300 rounded-md" value={usuario.nome} onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)} />
 
           <label htmlFor="email">E-mail</label>
-          <input type="text" name="email" placeholder="E-mail" className="p-2 border border-gray-300 rounded-md"
-            value={usuario.usuario} onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
-          />
+          <input type="text" name="email" placeholder="E-mail" className="p-2 border border-gray-300 rounded-md" value={usuario.usuario} onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)} />
 
           <label htmlFor="dataNascimento">Data de Nascimento</label>
-          <input type="data" name="dataNascimento" placeholder="dia/mês/ano" className="p-2 border border-gray-300 rounded-md"
-            value={usuario.dataNascimento} onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
-          />
+          <input type="data" name="dataNascimento" placeholder="dia/mês/ano" className="p-2 border border-gray-300 rounded-md" value={usuario.dataNascimento} onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)} />
 
           <label htmlFor="foto">Foto</label>
-          <input type="text" name="foto" placeholder="URL da foto" className="p-2 border border-gray-300 rounded-md"
-            onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
-          />
+          <input type="text" name="foto" placeholder="URL da foto" className="p-2 border border-gray-300 rounded-md" onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)} />
 
           <label htmlFor="senha">Senha</label>
-          <input type="password" name="senha" placeholder="********" className="p-2 border border-gray-300 rounded-md"
-            value={usuario.senha} onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
-          />
+          <input type="password" name="senha" placeholder="********" className="p-2 border border-gray-300 rounded-md" value={usuario.senha} onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)} />
 
           <label htmlFor="confirmarSenha">Confirmar Senha</label>
-          <input type="password" name="confirmarSenha" placeholder="********" className="p-2 border border-gray-300 rounded-md"
-            value={confirmaSenha} onChange={(e: ChangeEvent<HTMLInputElement>) => handleConfirmaSenha(e)}
-          />
+          <input type="password" name="confirmarSenha" placeholder="********" className="p-2 border border-gray-300 rounded-md" value={confirmaSenha} onChange={(e: ChangeEvent<HTMLInputElement>) => handleConfirmaSenha(e)} />
 
-          <button type="submit" className="flex justify-center rounded-lg p-2 bg-bright-turquoise-500 hover:bg-bright-turquoise-600 w-full hover:text-white">
+          <button type="submit" className="flex justify-center rounded-lg p-2  text-white bg-fuchsia-950 hover:bg-fuchsia-800 w-full hover:text-white">
             {isLoading ? <RotatingLines strokeColor="white" strokeWidth="5" animationDuration="0.75" width="24" visible={true} /> : <span>Cadastrar</span>}
           </button>
         </form>
 
-        <p className="text-sm mt-7">Já possui uma conta?
-          <Link to="/login" className="font-medium hover:underline text-fuchsia-700"> Entre aqui!</Link>
+        <p className="text-sm">
+          Já possui uma conta?
+          <Link to="/login" className="font-medium hover:underline text-fuchsia-800">
+            {" "}
+            Entre aqui!
+          </Link>
         </p>
       </div>
     </>
