@@ -10,7 +10,7 @@ function ModalCategorias() {
             <p className="m-4 text-center">Está buscando ampliar seus conhecimentos e desenvolver novas habilidades, nossos cursos são perfeitos para você!</p>
           </div>
 
-          <div className="flex flex-col items-center justify-center">
+          <div className="bg-cover items-center justify-center">
             <img src="https://ik.imagekit.io/rx2wvtnsm/Imagens%20Categorias/cursosa.png?updatedAt=1717689970772" className="w-[400px]" alt="LOGO CURSOS" />
           </div>
 
@@ -18,7 +18,7 @@ function ModalCategorias() {
             <h3 className="m-4 text-center">Oferecemos uma variedade de cursos em diversas áreas, com professores experientes e conteúdos atualizados.</h3>
 
             <Link to="/servicos">
-              <button className="font-bold text-teal-100 rounded px-4 py-2 mb-7 bg-fuchsia-900 hover:bg-teal-100 text-xl hover:text-fuchsia-800 hover:duration-500">Veja mais</button>
+              <button className="font-bold text-teal-100 rounded px-4 py-2 mb-7 bg-fuchsia-900 hover:bg-teal-100 text-xl hover:text-fuchsia-800 hover:duration-500">Saber mais</button>
             </Link>
           </div>
         </div>
@@ -37,7 +37,7 @@ function ModalCategorias() {
             <h3 className="m-4 text-center">Participe de nossas palestras e mantenha-se atualizado com as últimas tendências e melhores práticas do mercado.</h3>
 
             <Link to="/servicos">
-              <button className="font-bold text-teal-100 rounded px-4 py-2 mb-7 bg-fuchsia-900 hover:bg-teal-100 text-xl hover:text-fuchsia-800 hover:duration-500">Veja mais</button>
+              <button className="font-bold text-teal-100 rounded px-4 py-2 mb-7 bg-fuchsia-900 hover:bg-teal-100 text-xl hover:text-fuchsia-800 hover:duration-500">Saber mais</button>
             </Link>
           </div>
         </div>
@@ -56,7 +56,7 @@ function ModalCategorias() {
             <h3 className="m-4 text-center">Participe de nossos próximos workshops e adquira conhecimentos valiosos.</h3>
 
             <Link to="/servicos">
-              <button className="font-bold text-teal-100 rounded px-4 py-2 mb-7 bg-fuchsia-900 hover:bg-teal-100 text-xl hover:text-fuchsia-800 hover:duration-500">Veja mais</button>
+              <button className="font-bold text-teal-100 rounded px-4 py-2 mb-7 bg-fuchsia-900 hover:bg-teal-100 text-xl hover:text-fuchsia-800 hover:duration-500">Saber mais</button>
             </Link>
           </div>
         </div>
@@ -75,7 +75,7 @@ function ModalCategorias() {
             <h3 className="m-4 text-center">Inscreva-se para uma mentoria e acelere seu desenvolvimento profissional.</h3>
 
             <Link to="/servicos">
-              <button className="font-bold text-teal-100 rounded-full px-4 py-2 mb-7 bg-fuchsia-900 hover:bg-teal-100 text-xl hover:text-fuchsia-800 hover:duration-500">Veja mais</button>
+              <button className="font-bold text-teal-100 rounded-full px-4 py-2 mb-7 bg-fuchsia-900 hover:bg-teal-100 text-xl hover:text-fuchsia-800 hover:duration-500">Saber mais</button>
             </Link>
           </div>
         </div>
@@ -101,7 +101,7 @@ export default ModalCategorias;
         <div className="container flex flex-col items-center justify-center mt-4">
             <h3>Oferecemos cursos super legais para você ser um super profissional</h3>
 
-            <button className='font-bold text-teal-100 rounded m-4 px-4 py-2 bg-fuchsia-900 hover:bg-teal-100 text-xl hover:text-fuchsia-800 hover:duration-500'>Veja mais</button>
+            <button className='font-bold text-teal-100 rounded m-4 px-4 py-2 bg-fuchsia-900 hover:bg-teal-100 text-xl hover:text-fuchsia-800 hover:duration-500'>Saber mais</button>
         </div>
     </div>
 
@@ -119,7 +119,7 @@ export default ModalCategorias;
         <div className="container flex flex-col items-center justify-center mt-4">
             <h3>Oferecemos palestras super legais para você se tornar um super profissional</h3>
 
-            <button className='font-bold text-teal-100 rounded m-4 px-4 py-2 bg-fuchsia-900 hover:bg-teal-100 text-xl hover:text-fuchsia-800 hover:duration-500'>Veja mais</button>
+            <button className='font-bold text-teal-100 rounded m-4 px-4 py-2 bg-fuchsia-900 hover:bg-teal-100 text-xl hover:text-fuchsia-800 hover:duration-500'>Saber mais</button>
         </div>
     </div>
 </div>
