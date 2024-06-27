@@ -38,12 +38,9 @@ export default function ListarServico() {
 
   return (
     <>
-      <div className="bg-gradient-to-b from-neutral-300 to-zinc-200">
-        <div className="container mx-auto mt-0 grid grid-cols-1   items-center">
-          <div className="relative">
-            {/* <img className="mx-auto object-cover opacity-60" src="https://ik.imagekit.io/rx2wvtnsm/Categorias_imagens/7BFC4D64-E2A2-4449-AF2C-0B84E8B5912C_1_201_a.jpeg?updatedAt=1719439788394" alt="" /> */}
-            <img className=" mx-auto object-cover opacity-50" src="https://ik.imagekit.io/rx2wvtnsm/Categorias_imagens/51C19256-87CC-4F67-956F-998E543177F3_1_201_a.jpeg?updatedAt=1719458878112" alt="" />
-          </div>
+      <div className="bg-neutral-200">
+        <div className=" bg-cover items-center">
+          <img className=" object-cover opacity-50 " src="https://ik.imagekit.io/rx2wvtnsm/Categorias_imagens/51C19256-87CC-4F67-956F-998E543177F3_1_201_a%20(2).png?updatedAt=1719496536562" alt="" />
         </div>
       </div>
       <div className="bg-gradient-to-b from-sky-100 to-magenta-/-fuchsia-100 flex items-center justify-center">
