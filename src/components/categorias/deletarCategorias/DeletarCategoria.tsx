@@ -18,7 +18,7 @@ export default function DeletarCategoria() {
   async function buscarPorId(id: string) {
     try {
       await buscar(`/categorias/${id}`, setCategoria, {
-        headers: { Authorization: token},
+        headers: { Authorization: token },
       });
     } catch (error: any) {
       if (error.toString().includes("401")) {
@@ -45,7 +45,7 @@ export default function DeletarCategoria() {
 
     try {
       await deletar(`/categorias/${id}`, {
-        headers: {Authorization: token},
+        headers: { Authorization: token },
       });
       ToastAlerta("Categoria deletada com sucesso", "sucesso");
     } catch (error: any) {
@@ -85,9 +85,9 @@ export default function DeletarCategoria() {
                 {isLoading ? <RotatingLines strokeColor="white" strokeWidth="5" animationDuration="0.75" width="24" visible={true} /> : <span>Sim</span>}
               </button>
             </div>
+          </div>
         </div>
       </div>
-    </div>
     </>
-  )
+  );
 }

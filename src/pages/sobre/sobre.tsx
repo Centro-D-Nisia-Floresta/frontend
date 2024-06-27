@@ -24,8 +24,9 @@ export default function Sobre() {
             </div>
           </div>
 
-          <div className="bg-gradient-to-b  from-sky-100 to-magenta-/-fuchsia-100 bg-left bg-cover flex flex-col items-center min-h-[1300px]">
-            <h2 className="text-3xl font-light p-10 mt-20">NOSSO TIME DE DESENVOLVEDORES</h2>
+          <div className="bg-gradient-to-b p-20  from-sky-100 to-magenta-/-fuchsia-100 bg-left bg-cover flex flex-col items-center min-h-[1300px]">
+            <h1 className="text-4xl  mt-8 mb-0 font-thin">Conheça Nossos</h1>
+            <h2 className="text-6xl  mt-4 mb-0 font-thin">Desenvolvedores</h2>
 
             <div className="flex flex-row gap-8 p-10 ">
               <div className="border shadow-md shadow-gray-600  bg-white rounded-md w-56 p-12">

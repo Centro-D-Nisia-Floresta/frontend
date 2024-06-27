@@ -18,11 +18,11 @@ export default function DeletarServico() {
   async function buscarPorId(id: string) {
     try {
       await buscar(`/servicos/${id}`, setServico, {
-        headers: {Authorization: token}
+        headers: { Authorization: token },
       });
     } catch (error: any) {
       if (error.toString().includes("401")) {
-        ToastAlerta("O token expirou, favor logar novamente", 'info');
+        ToastAlerta("O token expirou, favor logar novamente", "info");
         handleLogout();
       }
     }
@@ -30,7 +30,7 @@ export default function DeletarServico() {
 
   useEffect(() => {
     if (token === "") {
-      ToastAlerta("Por favor, faça login!", 'info');
+      ToastAlerta("Por favor, faça login!", "info");
       navigate("/login");
     }
   }, [token]);
@@ -48,12 +48,12 @@ export default function DeletarServico() {
       await deletar(`/servicos/${id}`, {
         headers: { Authorization: token },
       });
-      ToastAlerta("Serviço apagado com sucesso", 'sucesso');
+      ToastAlerta("Serviço apagado com sucesso", "sucesso");
     } catch (error: any) {
       if (error.toString().includes("401")) {
         handleLogout();
       } else {
-        ToastAlerta("Erro ao deletar o serviço", 'erro');
+        ToastAlerta("Erro ao deletar o serviço", "erro");
       }
     }
     setIsLoading(false);
@@ -90,5 +90,5 @@ export default function DeletarServico() {
         </div>
       </div>
     </>
-  )
+  );
 }

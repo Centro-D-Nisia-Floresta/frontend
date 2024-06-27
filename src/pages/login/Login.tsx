@@ -52,7 +52,7 @@ function Login() {
 
           <p className="text-sm">
             Primeiro Acesso?
-            <Link to="/cadastro" className="font-medium hover:underline text-fuchsia-950">
+            <Link to="/cadastro" className="font-medium hover:underline text-fuchsia-700">
               {" "}
               Cadastre-se aqui
             </Link>

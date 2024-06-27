@@ -33,10 +33,10 @@ export function AuthProvider({ children }: AuthProviderProps) {
     setIsLoading(true);
     try {
       await login(`/usuarios/logar`, userLogin, setUsuario);
-      ToastAlerta("Usuário autenticado com sucesso!", 'sucesso');
+      ToastAlerta("Usuário autenticado com sucesso!", "sucesso");
       setIsLoading(false);
     } catch (error) {
-      ToastAlerta("Falha na autenticação! Verifique as informações.", 'erro');
+      ToastAlerta("Falha na autenticação! Verifique as informações.", "erro");
       setIsLoading(false);
     }
   }
@@ -45,7 +45,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
     setUsuario({
       id: 0,
       nome: "",
-      tipo:"",
+      tipo: "",
       usuario: "",
       senha: "",
       foto: "",

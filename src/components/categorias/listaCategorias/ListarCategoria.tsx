@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { buscar } from "../../../services/Service";
 import Categoria from "../../../models/Categoria";
 import { AuthContext } from "../../../contexts/AuthContext";
-import ModalCategorias from "../modalCategorias/ModalCategorias";
+
 import { ToastAlerta } from "../../../utils/ToastAlerta";
 import CardCategorias from "../cardcategorias/CardCategorias";
 
@@ -22,18 +22,18 @@ export default function ListarCategorias() {
       });
     } catch (error: any) {
       if (error.toString().includes("401")) {
-        // ToastAlerta("O token expirou, favor logar novamente!", "info")
+        ToastAlerta("O token expirou, favor logar novamente!", "info");
         handleLogout();
       }
     }
   }
 
-  // useEffect(() => {
-  //   if (token === "") {
-  //     ToastAlerta("Acesso restrito. Por favor, faça login!", "info");
-  //     navigate("/login");
-  //   }
-  // }, [token]);
+  useEffect(() => {
+    if (token === "") {
+      ToastAlerta("Acesso restrito. Por favor, faça login!", "info");
+      navigate("/login");
+    }
+  }, [token]);
 
   useEffect(() => {
     buscarCategorias();
@@ -41,36 +41,27 @@ export default function ListarCategorias() {
 
   return (
     <>
-      <div className="container w-full m-4 p-6 mt-5">
-        <div className="flex items-center justify-center gap-4">
-          <div className="w-full flex justify-center">
-            <img src="https://ik.imagekit.io/rx2wvtnsm/Dayflow_-_Work_from_Home.png?updatedAt=1717618544389" className="w-96 rounded-md" />
-          </div>
-
-          <div className="flex flex-col justify-center leading-6 ">
-            <h1 className="text-4xl font-semibold p-2 mb-2">O que você vai encontrar aqui</h1>
-            <p className="text-justify">
-              Nossa plataforma oferece uma variedade de recursos para apoiar seu desenvolvimento profissional e pessoal. Temos cursos detalhados que cobrem uma ampla gama de tópicos, desde habilidades técnicas até desenvolvimento pessoal. Nossas palestras são ministradas por especialistas da indústria, proporcionando insights valiosos e tendências atuais do mercado. Participando de nossos workshops, você terá a oportunidade de aprender de forma prática e interativa, enquanto nossas mentorias
-              personalizadas ajudam a orientar seu crescimento profissional com conselhos e suporte individualizados.
-            </p>
+      <div className="bg-gradient-to-b from-neutral-200 to-zinc-300">
+        <div className="container mx-auto mt-0 grid grid-cols-1   items-center">
+          <div className="relative">
+            {/* <img className="mx-auto object-cover opacity-60" src="https://ik.imagekit.io/rx2wvtnsm/Categorias_imagens/7BFC4D64-E2A2-4449-AF2C-0B84E8B5912C_1_201_a.jpeg?updatedAt=1719439788394" alt="" /> */}
+            <img className=" mx-auto object-cover opacity-50" src="https://ik.imagekit.io/rx2wvtnsm/Categorias_imagens/8F86CADA-DD08-4189-B453-B593404F6871_1_201_a.jpeg?updatedAt=1719456309610" alt="" />
           </div>
         </div>
+      </div>
 
-        <div className="container flex flex-col items-center justify-center">
-          <h2 className="text-3xl font-medium">Categorias</h2>
-          <p className="text-lg italic mb-10">Explore nossas categorias e encontre o caminho certo para alcançar seus objetivos!</p>
+      <div className="bg-gradient-to-b from-sky-100 to-magenta-/-fuchsia-100 flex items-center justify-center">
+        <div className="container w-full m-4 p-8 mt-10 ">
+          <div className="container flex flex-col items-center justify-center mt-10">
+            <h1 className="text-5xl  mt-4 mb-0 font-thin">Conheça Nossas</h1>
+            <h2 className="text-8xl  mt-4 mb-10 font-thin">Categorias</h2>
 
-          <div className="min-h-[70vh]">
-            {categorias.length === 0 && (
-              <div className="flex flex-col items-center">
-                <h1 className="text-3xl font-medium p-2 mt-7">Nenhuma categoria foi encontrada!</h1>
+            <div className="flex flex-col min-h-[70vh]">
+              <div className="flex flex-wrap justify-center gap-4">
+                {categorias.map((categoria) => (
+                  <CardCategorias key={categoria.id} categoria={categoria} />
+                ))}
               </div>
-            )}
-
-            <div className="container flex justify-center gap-5">
-              {categorias.map((categoria) => (
-                <CardCategorias key={categoria.id} categoria={categoria} />
-              ))}
             </div>
           </div>
         </div>
