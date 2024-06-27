@@ -6,7 +6,7 @@ export default function Contato() {
       <div className="bg-gradient-to-b from-sky-100 to-magenta-/-fuchsia-100">
         <div className="p-7">
           <div className="flex flex-col items-center">
-            <h2 className="mb-6 text-3xl font-light pb-2">Quer saber mais sobre os nosso serviços?</h2>
+            <h2 className="mb-6 text-3xl font-light pb-2">Quer saber mais sobre os nossos serviços?</h2>
             <form className="flex flex-col p-10 border rounded-md bg-white shadow-md shadow-fuchsia-950 w-[50%]">
               <label htmlFor="nome">Nome</label>
               <input type="text" name="nome" placeholder="Nome" className="p-2 border border-gray-300 rounded-md" />

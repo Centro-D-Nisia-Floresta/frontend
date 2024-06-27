@@ -14,14 +14,13 @@ export default function CardServico({ servico }: CardServicosProps) {
   return (
     <>
       <div>
-        <div className="container flex flex-col w-80 gap-2 border rounded-md p-3 bg-white shadow-xl">
+        <div className="container flex flex-col w-90 gap-2 border rounded-md p-4 bg-white shadow-xl shadow-md shadow-fuchsia-950">
           <div className="flex justify-center p-4">
-            <img src={servico.foto} alt="" className="w-72" />
+            <img src={servico.foto} alt="" className="w-screen h-32 object-cover rounded opacity-80" />
           </div>
 
           <div className="mb-3">
             <h2 className="text-lg text-center font-medium mb-3">
-              {" "}
               {servico.categoria?.tipoServico} {servico.nome}
             </h2>
             <p className="text-[1.1rem] pl-2">Duração: {servico.duracao}</p>
@@ -32,18 +31,12 @@ export default function CardServico({ servico }: CardServicosProps) {
 
           <div className="flex flex-col">
             <div className="flex ">
-              <button className="flex items-center mt-1 mr-3 gap-2">
-                <Basket size={26} weight="light" /> Comprar
-              </button>
-              {/* <p className="flex items-center mt-1 mr-3"></p> */}
               {usuario.tipo === "adm" && (
                 <>
-                  <Link className="text-center w-full text-white bg-fuchsia-400 hover:bg-fuchsia-600 rounded" to={`/editarservico/${servico.id}`}>
-                    {" "}
+                  <Link className="text-center w-full text-white bg-fuchsia-400 hover:bg-fuchsia-600 rounded p-1" to={`/editarservico/${servico.id}`}>
                     <button>Editar</button>{" "}
                   </Link>
-                  <Link className="text-center w-full text-white bg-red-400 hover:bg-red-600 rounded" to={`/deletarservico/${servico.id}`}>
-                    {" "}
+                  <Link className="text-center w-full text-white bg-red-400 hover:bg-red-600 rounded p-1" to={`/deletarservico/${servico.id}`}>
                     <button>Apagar</button>{" "}
                   </Link>
                 </>

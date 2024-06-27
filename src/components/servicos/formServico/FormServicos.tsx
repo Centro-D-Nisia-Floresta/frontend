@@ -135,8 +135,8 @@ export default function FormServico() {
 
   return (
     <>
-      <div className="flex items-center justify-center bg-gradient-to-b from-bright-turquoise-200 to-magenta-/-fuchsia-200">
-        <div className="container w-[40%] m-4 p-6 mt-5 flex flex-col items-center bg-white rounded-xl shadow-lg">
+      <div className="flex items-center justify-center bg-gradient-to-b from-sky-100 to-magenta-/-fuchsia-100">
+        <div className="container w-[40%] m-4 p-6 mt-5 flex flex-col items-center bg-white rounded-xl shadow-xl shadow-md shadow-fuchsia-950">
           <h1 className="text-4xl font-semibold p-2">{id !== undefined ? "Editar Serviço" : "Cadastrar Serviço"}</h1>
 
           <form className="flex w-full max-w-2xl flex-col p-4" onSubmit={gerarNovaServico}>
@@ -189,7 +189,7 @@ export default function FormServico() {
                 </button>
 
                 <button type="submit" className="flex justify-center rounded-lg py-2 mt-5 bg-bright-turquoise-500 hover:bg-bright-turquoise-600 w-full hover:text-white" disabled={carregandoCategoria || isLoading}>
-                  {isLoading ? <RotatingLines strokeColor="white" strokeWidth="5" animationDuration="0.75" width="24" visible={true} /> : <span>{id !== undefined ? "Atualizar" : "Cadastre um Serviço"}</span>}
+                {isLoading ? <RotatingLines strokeColor="black" strokeWidth="5" animationDuration="0.75" width="24" visible={true} /> : <span>{id === undefined ? "Cadastrar" : "Atualizar"}</span>}
                 </button>
               </div>
             </div>

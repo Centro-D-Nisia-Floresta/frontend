@@ -15,17 +15,17 @@ export default function Home() {
               <div className="mt-20 text-primary font-light">Educação e Capacitação para Mulheres</div>
               <h3 className="text-4xl  mb-4 mt-6 font-light">REDUZINDO A DESIGUALDADE DE GÊNERO NA TECNOLOGIA</h3>
 
-              <button className="mb-20 m-6 mx-auto text-xl bg-fuchsia-950 hover:bg-fuchsia-800 text-white font-light hover:text-white py-2 px-4 border border-violet-800 hover:border-transparent rounded-full">Quero Saber Mais</button>
+              <Link to="/servicos">
+                <button className="mb-20 m-6 mx-auto text-xl bg-fuchsia-950 hover:bg-fuchsia-800 text-white font-light hover:text-white py-2 px-4 border border-violet-800 hover:border-transparent rounded-full">Quero Saber Mais</button>
+              </Link>
             </div>
           </div>
 
           <div className="relative ">
-            <img className=" object-cover opacity-50" src="https://ik.imagekit.io/rx2wvtnsm/A64527B3-6617-402F-907B-CAF36A556762_1_201_a%20(2).jpeg?updatedAt=1719290944935" alt="" />
+            <img className="object-cover opacity-50" src="https://ik.imagekit.io/rx2wvtnsm/A64527B3-6617-402F-907B-CAF36A556762_1_201_a%20(2).jpeg?updatedAt=1719290944935" alt="" />
           </div>
         </div>
       </div>
-
-      {/* //test below */}
 
       <div className="bg-white">
         <div className="container mx-auto mt-20 grid grid-cols-1 md:grid-cols-2 items-center mb-10">
@@ -77,5 +77,3 @@ export default function Home() {
     </>
   );
 }
-
-//Junte-se a nós nessa jornada e construa um amanhã mais brilhante!

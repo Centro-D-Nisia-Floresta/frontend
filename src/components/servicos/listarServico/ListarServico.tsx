@@ -39,14 +39,14 @@ export default function ListarServico() {
   return (
     <>
       <div className="bg-neutral-200">
-        <div className=" bg-cover items-center">
+        <div className="bg-cover items-center">
           <img className=" object-cover opacity-50 " src="https://ik.imagekit.io/rx2wvtnsm/Categorias_imagens/51C19256-87CC-4F67-956F-998E543177F3_1_201_a%20(2).png?updatedAt=1719496536562" alt="" />
         </div>
       </div>
       <div className="bg-gradient-to-b from-sky-100 to-magenta-/-fuchsia-100 flex items-center justify-center">
         <div className="container w-full m-4 p-20 mt-5">
-          <div className="flex flex-col gap-3 p-3 items-center">
-            <section className="text-center  mx-10  md:text-left md:p-0">
+          <div className="flex flex-col gap-3 p-4 items-center">
+            <section className="text-center mx-10  md:text-left md:p-0">
               <h1 className="text-center text-5xl font-thin">Para educar, capacitar e impulsionar</h1>
             </section>
             <section className="container mx-auto py-20 mb-20">
@@ -87,8 +87,8 @@ export default function ListarServico() {
                 </div>
               </div>
             </section>
-            <h1 className="text-5xl  mt-4 mb-0 font-thin">Conheça Nossos</h1>
-            <h2 className="text-8xl  mt-4 mb-10 font-thin">Serviços</h2>
+            <h1 className="text-5xl mb-0 font-thin">Conheça Nossos</h1>
+            <h2 className="text-7xl mb-7 font-thin">Serviços</h2>
           </div>
 
           <div className="flex flex-col min-h-[70vh]">

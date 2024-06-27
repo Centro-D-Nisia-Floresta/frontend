@@ -65,25 +65,27 @@ export default function DeletarCategoria() {
 
   return (
     <>
-      <div className=" container min-h-[80vh]">
-        <div className="container w-1/3 mt-6 mx-auto">
-          <h1 className="text-4xl font-semibold p-2 text-center">Deletar Categoria</h1>
-          <p className="text-center font-semibold mb-4"> Você tem certeza de que deseja apagar a categoria a seguir?</p>
+      <div className="bg-gradient-to-b from-sky-100 to-magenta-/-fuchsia-100">
+        <div className="min-h-[80vh]">
+          <div className="container w-1/3 mt-6 mx-auto">
+            <h1 className="text-4xl font-semibold p-2 text-center">Deletar Categoria</h1>
+            <p className="text-center font-semibold mb-4"> Você tem certeza de que deseja apagar a categoria a seguir?</p>
 
-          <div className="border flex flex-col rounded-2xl overflow-hidden justify-between">
-            <header className="py-2 px-6 text-2xl font-medium bg-bright-turquoise-200">Categoria</header>
+            <div className="border flex flex-col rounded-2xl overflow-hidden justify-between">
+              <header className="py-2 px-6 text-2xl font-medium bg-bright-turquoise-200">Categoria</header>
 
-            <div className="container mb-4 py-2">
-              <p className="font-medium text-center text-xl">{categoria.tipoServico}</p>
-            </div>
+              <div className="container mb-4 py-2">
+                <p className="font-medium text-center text-xl">{categoria.tipoServico}</p>
+              </div>
 
-            <div className="flex">
-              <button className="text-white bg-red-400 hover:bg-red-600 w-full py-2" onClick={retornar}>
-                Não
-              </button>
-              <button className="w-full text-white bg-bright-turquoise-400 hover:bg-bright-turquoise-600 flex items-center justify-center" onClick={deletarCategoria}>
-                {isLoading ? <RotatingLines strokeColor="white" strokeWidth="5" animationDuration="0.75" width="24" visible={true} /> : <span>Sim</span>}
-              </button>
+              <div className="flex">
+                <button className="text-white bg-red-400 hover:bg-red-600 w-full py-2" onClick={retornar}>
+                  Não
+                </button>
+                <button className="w-full text-white bg-bright-turquoise-400 hover:bg-bright-turquoise-600 flex items-center justify-center" onClick={deletarCategoria}>
+                  {isLoading ? <RotatingLines strokeColor="white" strokeWidth="5" animationDuration="0.75" width="24" visible={true} /> : <span>Sim</span>}
+                </button>
+              </div>
             </div>
           </div>
         </div>

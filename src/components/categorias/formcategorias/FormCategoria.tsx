@@ -88,8 +88,8 @@ export default function FormCategoria() {
 
   return (
     <>
-      <div className="min-h-[80vh] flex items-center justify-center bg-gradient-to-b from-bright-turquoise-200 to-magenta-/-fuchsia-200">
-        <div className="container w-[40%] m-4 p-6 mt-5 flex flex-col items-center bg-white rounded-xl shadow-lg">
+      <div className="min-h-[80vh] flex items-center justify-center bg-gradient-to-b from-sky-100 to-magenta-/-fuchsia-100">
+        <div className="container w-[40%] m-4 p-6 mt-5 flex flex-col items-center bg-white rounded-xl shadow-xl shadow-md shadow-fuchsia-950">
           <h1 className="text-4xl font-semibold p-2">{id === undefined ? "Cadastrar Categoria" : "Editar Categoria"}</h1>
 
           <form className="flex w-full max-w-2xl flex-col p-4" onSubmit={gerarNovaCategoria}>

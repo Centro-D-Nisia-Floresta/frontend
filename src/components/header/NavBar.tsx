@@ -20,7 +20,6 @@ function Navbar() {
         <div className="">
           <Link to="/home" className="">
             <span className="text-3xl   font-light">NÍSIA FLORESTA</span>
-            {/* <img className="h-[350px]" src="https://ik.imagekit.io/rx2wvtnsm/Nisa%20Floresta%20Branco?updatedAt=1717598564578" alt="LOGO DO PROJETO" /> */}
           </Link>
         </div>
 
@@ -29,12 +28,12 @@ function Navbar() {
             {usuario.tipo === "adm" && (
               <>
                 <li>
-                  <Link to="/cadastroServico" className="hover:text-gray-500 font-medium">
+                  <Link to="/cadastrarservico" className="hover:text-gray-500 font-medium">
                     Cadastrar Serviço
                   </Link>
                 </li>
                 <li>
-                  <Link to="/cadastroCategoria" className="hover:text-gray-500 font-medium">
+                  <Link to="/cadastrarcategoria" className="hover:text-gray-500 font-medium">
                     Cadastrar Categoria
                   </Link>
                 </li>
@@ -61,13 +60,12 @@ function Navbar() {
         <div className="flex items-center justify-between">
           {usuario.token !== "" ? (
             <div id="botao-nav-login" className="flex items-center gap-3">
-              <Link to="/perfil" className="border rounded-xl border-slate-300 p-1 hover:shadow-md hover:bg-bright-turquoise-100 hover:border-magenta-/-fuchsia-200">
+              <Link to="/perfil" className="border rounded-xl border-fuchsia-200 p-1 hover:shadow-md hover:bg-fuchsia-100">
                 <User size={30} weight="regular" />
               </Link>
-              <Link to="/login" onClick={logout} className="border rounded-xl border-slate-300 p-1 hover:shadow-md hover:bg-bright-turquoise-100 hover:border-magenta-/-fuchsia-2">
+              <Link to="/login" onClick={logout} className="border rounded-xl border-fuchsia-200 p-1 hover:shadow-md hover:bg-fuchsia-100 ">
                 <SignOut size={30} weight="regular" />
               </Link>
-              {/* acrescentar icone carrinho de compras */}
             </div>
           ) : (
             <div>
@@ -77,7 +75,6 @@ function Navbar() {
             </div>
           )}
         </div>
-        {/* <List size={30} weight="regular" className="cursor-pointer md:hidden"/> */}
       </nav>
     </>
   );

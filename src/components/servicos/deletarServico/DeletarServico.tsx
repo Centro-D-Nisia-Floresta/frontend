@@ -66,7 +66,8 @@ export default function DeletarServico() {
 
   return (
     <>
-      <div className=" container min-h-[80vh]">
+      <div className="bg-gradient-to-b from-sky-100 to-magenta-/-fuchsia-100 w-full">
+      <div className="min-h-[80vh] ">
         <div className="container w-1/3 mt-6 mx-auto">
           <h1 className="text-4xl font-semibold p-2 text-center">Deletar Serviço</h1>
           <p className="text-center font-semibold mb-4">Você tem certeza de que deseja apagar a serviço a seguir?</p>
@@ -88,6 +89,7 @@ export default function DeletarServico() {
             </div>
           </div>
         </div>
+      </div>
       </div>
     </>
   );

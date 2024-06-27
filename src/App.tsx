@@ -9,13 +9,10 @@ import Sobre from "./pages/sobre/sobre";
 import ListarServico from "./components/servicos/listarServico/ListarServico";
 import FormServicos from "./components/servicos/formServico/FormServicos";
 import DeletarServico from "./components/servicos/deletarServico/DeletarServico";
-
 import Navbar from "./components/header/NavBar";
-
 import DeletarCategoria from "./components/categorias/deletarCategorias/DeletarCategoria";
 import ListarCategorias from "./components/categorias/listaCategorias/ListarCategoria";
 import Perfil from "./pages/perfil/Perfil";
-import Cart from "./components/carrinho/cart/Cart";
 import FormCategoria from "./components/categorias/formcategorias/FormCategoria";
 import Footer from "./components/footer/footer";
 
@@ -35,7 +32,6 @@ function App() {
             <Route path="/cadastro" element={<Cadastro />} />
             <Route path="/sobre" element={<Sobre />} />
             <Route path="/perfil" element={<Perfil />} />
-            <Route path="/carrinho" element={<Cart />} />
 
             <Route path="/servicos" element={<ListarServico />} />
             <Route path="/cadastrarservico" element={<FormServicos />} />
