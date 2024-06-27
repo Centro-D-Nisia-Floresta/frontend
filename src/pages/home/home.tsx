@@ -8,14 +8,7 @@ export default function Home() {
 
   return (
     <>
-      <div
-        className="bg-gradient-to-b from-sky-100 to-magenta-/-fuchsia-100 bg-left bg-cover "
-        // style={{
-        //   backgroundImage: "url('https://shecodes.ly/wp-content/uploads/hero-svg-bg.svg')",
-        // }}
-
-        //
-      >
+      <div className="bg-gradient-to-b from-sky-100 to-magenta-/-fuchsia-100 bg-left bg-cover">
         <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 items-center bg-gradient-to-b from-sky-100 to-magenta-/-fuchsia-100">
           <div className="flex items-center">
             <div className="text-center mx-20 md:text-left md:p-0">
@@ -27,7 +20,7 @@ export default function Home() {
           </div>
 
           <div className="relative ">
-            <img className="ml-20 object-cover opacity-50" src="https://ik.imagekit.io/rx2wvtnsm/A64527B3-6617-402F-907B-CAF36A556762_1_201_a%20(2).jpeg?updatedAt=1719290944935" alt="" />
+            <img className=" object-cover opacity-50" src="https://ik.imagekit.io/rx2wvtnsm/A64527B3-6617-402F-907B-CAF36A556762_1_201_a%20(2).jpeg?updatedAt=1719290944935" alt="" />
           </div>
         </div>
       </div>
@@ -35,9 +28,9 @@ export default function Home() {
       {/* //test below */}
 
       <div className="bg-white">
-        <div className="container mx-auto mt-20 grid grid-cols-1 md:grid-cols-2 items-center">
+        <div className="container mx-auto mt-20 grid grid-cols-1 md:grid-cols-2 items-center mb-10">
           <div className="flex items-center">
-            <div className="text-center mx-10 md:text-left md:p-0">
+            <div className="text-center mx-10 md:text-left ">
               <h1 className="text-5xl  mt-4 mb-0 font-thin">Centro de Desenvolvimento</h1>
               <h1 className="text-8xl  mt-4 mb-0 font-thin">Nísia Floresta</h1>
               <p className="text-base text-justify font-thin mt-12">
@@ -60,14 +53,12 @@ export default function Home() {
               <p className=" text-justify text-2xl font-thin mb-40 mt-14">
                 O Centro de Desenvolvimento Nísia Floresta tem como missão transformar a vida das mulheres por meio da educação, capacitando-as com formações que promovam o empoderamento e a igualdade de gênero na área de tecnologia. Nossos programas visam preparar as mulheres para se destacarem em um mercado de trabalho cada vez mais digital e competitivo, promovendo a inovação e impulsionando o crescimento sustentável em busca de um futuro melhor.
               </p>
-
-              {/* <img className="  w-100 h-100 object-cover mx-auto mt-20 mb-20 " src="https://ik.imagekit.io/rx2wvtnsm/Logokit%20Ni%CC%81sia%20Floresta%20(5).png?updatedAt=1719317726276" alt="" /> */}
             </div>
           </div>
         </div>
 
-        <section className="container mx-auto  grid grid-cols-1 md:grid-cols-2 items-center">
-          <div className="text-center mx-10 md:text-left md:p-0 items-center mb-10 ">
+        <section className="container mx-auto  grid grid-cols-1 md:grid-cols-2 items-center pt-8">
+          <div className="text-center mx-10 md:text-left items-center mb-10">
             <h2 className="text-3xl font-light mt-4 mb-0 ">Comece agora uma carreira em tecnologia!</h2>
             <p className=" text-2xl font-thin mb-10 mt-10"> Participe de nossos cursos, palestras, workshops e mentorias projetados para empoderar e capacitar mulheres para o mercado de trabalho em tecnologia. </p>
 
@@ -77,7 +68,7 @@ export default function Home() {
           </div>
 
           <div className="mx-auto">
-            <img src="https://ik.imagekit.io/rx2wvtnsm/Centro%20de%20Desenvolvimento%20(3).png?updatedAt=1719340635958" alt="" />
+            <img src="https://ik.imagekit.io/rx2wvtnsm/Centro%20de%20Desenvolvimento%20(3).png?updatedAt=1719340635958" alt=""/>
           </div>
         </section>
 
