@@ -74,8 +74,8 @@ function Cadastro() {
               value={usuario.nome} onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
             />
 
-            <label htmlFor="email">E-mail</label>
-            <input type="text" name="email" placeholder="E-mail" className="p-2 border border-gray-300 rounded-md"
+            <label htmlFor="usuario">E-mail</label>
+            <input type="text" name="usuario" placeholder="E-mail" className="p-2 border border-gray-300 rounded-md"
               value={usuario.usuario} onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
             />
 
