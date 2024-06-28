@@ -27,11 +27,11 @@ export default function CardCategorias({ categoria }: CardCategoriasProps) {
             <div className="flex mt-4">
               {usuario.tipo === "adm" && (
                 <>
-                  <Link className="text-center w-full text-white bg-fuchsia-400 hover:bg-fuchsia-600 rounded p-1" to={`/editarcategoria/${categoria.id}`}>
+                  <Link className="text-center w-full rounded border border-fuchsia-900 hover:bg-fuchsia-900 w-full hover:text-white p-1" to={`/editarcategoria/${categoria.id}`}>
                     <button>Editar</button>
                   </Link>
 
-                  <Link className="text-center w-full text-white bg-red-400 hover:bg-red-600 rounded p-1" to={`/deletarcategoria/${categoria.id}`}>
+                  <Link className="text-center w-full rounded border border-fuchsia-700 hover:bg-fuchsia-700 w-full hover:text-white p-1" to={`/deletarcategoria/${categoria.id}`}>
                     <button>Apagar</button>
                   </Link>
                 </>

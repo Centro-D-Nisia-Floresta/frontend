@@ -101,11 +101,11 @@ export default function FormCategoria() {
 
             <div className="flex flex-col">
               <div className="flex">
-                <button className="flex justify-center rounded-lg py-2 mt-5 bg-red-400 hover:bg-red-600 w-full hover:text-white" onClick={retornar}>
+                <button className="flex justify-center rounded-lg py-2 mt-5 border border-fuchsia-900 hover:bg-fuchsia-900 w-full hover:text-white" onClick={retornar}>
                   Não
                 </button>
 
-                <button type="submit" className="flex justify-center rounded-lg py-2 mt-5 bg-bright-turquoise-500 hover:bg-bright-turquoise-600 w-full hover:text-white">
+                <button type="submit" className="flex justify-center rounded-lg py-2 mt-5 border border-fuchsia-700 hover:bg-fuchsia-700 w-full hover:text-white">
                   {isLoading ? <RotatingLines strokeColor="black" strokeWidth="5" animationDuration="0.75" width="24" visible={true} /> : <span>{id === undefined ? "Cadastrar" : "Atualizar"}</span>}
                 </button>
               </div>

@@ -71,18 +71,18 @@ export default function DeletarCategoria() {
             <h1 className="text-4xl font-semibold p-2 text-center">Deletar Categoria</h1>
             <p className="text-center font-semibold mb-4"> Você tem certeza de que deseja apagar a categoria a seguir?</p>
 
-            <div className="border flex flex-col rounded-2xl overflow-hidden justify-between">
-              <header className="py-2 px-6 text-2xl font-medium bg-bright-turquoise-200">Categoria</header>
+            <div className="rounded-xl shadow-xl shadow-md shadow-fuchsia-950 flex flex-col rounded-2xl overflow-hidden justify-between">
+              <header className="py-2 px-6 text-2xl font-medium bg-fuchsia-800 text-white">Categoria</header>
 
               <div className="container mb-4 py-2">
                 <p className="font-medium text-center text-xl">{categoria.tipoServico}</p>
               </div>
 
               <div className="flex">
-                <button className="text-white bg-red-400 hover:bg-red-600 w-full py-2" onClick={retornar}>
+                <button className="border border-fuchsia-900 hover:bg-fuchsia-900 w-full hover:text-white py-2" onClick={retornar}>
                   Não
                 </button>
-                <button className="w-full text-white bg-bright-turquoise-400 hover:bg-bright-turquoise-600 flex items-center justify-center" onClick={deletarCategoria}>
+                <button className="w-full border border-fuchsia-700 hover:bg-fuchsia-700 w-full hover:text-white flex items-center justify-center" onClick={deletarCategoria}>
                   {isLoading ? <RotatingLines strokeColor="white" strokeWidth="5" animationDuration="0.75" width="24" visible={true} /> : <span>Sim</span>}
                 </button>
               </div>

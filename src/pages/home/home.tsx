@@ -28,9 +28,9 @@ export default function Home() {
       </div>
 
       <div className="bg-white">
-        <div className="container mx-auto mt-20 grid grid-cols-1 md:grid-cols-2 items-center mb-10">
+        <div className="container mx-auto mt-20 grid grid-cols-1 md:grid-cols-2 items-center ">
           <div className="flex items-center">
-            <div className="text-center mx-10 md:text-left ">
+            <div className="text-center mx-10 md:text-left">
               <h1 className="text-5xl  mt-4 mb-0 font-thin">Centro de Desenvolvimento</h1>
               <h1 className="text-8xl  mt-4 mb-0 font-thin">Nísia Floresta</h1>
               <p className="text-base text-justify font-thin mt-12">

@@ -25,7 +25,7 @@ export default function CardServico({ servico }: CardServicosProps) {
             </h2>
             <p className="text-[1.1rem] pl-2">Duração: {servico.duracao}</p>
             <p className="text-[1.1rem] pl-2">Vagas: {servico.vagas}</p>
-            <p className="text-[1.1rem] pl-2">Gratuito: {servico.gratuidade}</p>
+            {/* <p className="text-[1.1rem] pl-2">Gratuito: {servico.gratuidade}</p> */}
             <p className="text-[1.1rem] pl-2 font-medium">Valor: R${servico.preco}</p>
           </div>
 
@@ -33,10 +33,10 @@ export default function CardServico({ servico }: CardServicosProps) {
             <div className="flex ">
               {usuario.tipo === "adm" && (
                 <>
-                  <Link className="text-center w-full text-white bg-fuchsia-400 hover:bg-fuchsia-600 rounded p-1" to={`/editarservico/${servico.id}`}>
+                  <Link className="text-center w-full rounded border border-fuchsia-900 hover:bg-fuchsia-900 w-full hover:text-white p-1" to={`/editarservico/${servico.id}`}>
                     <button>Editar</button>{" "}
                   </Link>
-                  <Link className="text-center w-full text-white bg-red-400 hover:bg-red-600 rounded p-1" to={`/deletarservico/${servico.id}`}>
+                  <Link className="text-center w-full rounded border border-fuchsia-700 hover:bg-fuchsia-700 w-full hover:text-white p-1" to={`/deletarservico/${servico.id}`}>
                     <button>Apagar</button>{" "}
                   </Link>
                 </>
