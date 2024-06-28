@@ -24,9 +24,13 @@ export default function CardServico({ servico }: CardServicosProps) {
               {servico.categoria?.tipoServico} {servico.nome}
             </h2>
             <p className="text-[1.1rem] pl-2">Duração: {servico.duracao}</p>
-            <p className="text-[1.1rem] pl-2">Vagas: {servico.vagas}</p>
-            {/* <p className="text-[1.1rem] pl-2">Gratuito: {servico.gratuidade}</p> */}
-            <p className="text-[1.1rem] pl-2 font-medium">Valor: R${servico.preco}</p>
+            <p className="text-[1.1rem] pl-2 mb-4">Vagas: {servico.vagas}</p>
+
+            {servico.gratuidade ? (
+                <p className="text-[1.1rem] pl-2 font-medium">Gratuito</p>
+              ) : (
+                <p className="text-[1.1rem] pl-2 font-medium">R${servico.preco}</p>
+            )}
           </div>
 
           <div className="flex flex-col">
